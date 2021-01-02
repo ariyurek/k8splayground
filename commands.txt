@@ -1,0 +1,40 @@
+sudo code --user-data-dir="~/.vscode-root"
+sudo systemctl start docker
+sudo systemctl enable docker
+
+https://slides.kubernetesmastery.com/#142
+
+https://microk8s.io/
+
+sudo snap install microk8s --classic
+sudo snap install kubectl --classic
+sudo microk8s.enable # Autostart on boot
+sudo microk8s.start # Start right now
+# Wait until microk8s has started
+until microk8s.status ; do sleep 1 ; done
+# Enable some standard modules
+microk8s.enable dashboard registry istio
+
+sudo snap install microk8s --classic
+microk8s.kubectl 
+echo "alias kubectl='microk8.kubectl'" >> ~/.bashrc
+microk8s.status
+microk8s start
+microk8s stop
+microk8s enable dashboard dns registry istio
+microk8s kubectl get all --all-namespaces
+microk8s kubectl get nodes
+microk8s kubectl get services
+microk8s.kubectl cluster-info
+
+alper@goodfellas:~$ alias k=microk8s.kubectl
+alper@goodfellas:~$ k get nodes
+
+
+microk8s.kubectl apply -f https://k8smastery.com/shpod.yaml
+
+Create it with kubectl apply -f https://k8smastery.com/shpod.yaml
+
+Attach to shell with kubectl attach --namespace=shpod -ti shpod
+
+After finishing course kubectl delete -f https://k8smastery.com/shpod.yaml
