@@ -1,7 +1,7 @@
 sudo code --user-data-dir="~/.vscode-root"
 sudo systemctl start docker
 sudo systemctl enable docker
-
+systemctl list-units --type=service
 https://slides.kubernetesmastery.com/#142
 
 https://microk8s.io/
@@ -18,6 +18,7 @@ microk8s.enable dashboard registry istio
 sudo snap install microk8s --classic
 microk8s.kubectl 
 echo "alias kubectl='microk8.kubectl'" >> ~/.bashrc
+echo "alias kubectl='microk8.kubectl'" >> ~/.bash_aliases
 microk8s.status
 microk8s start
 microk8s stop
@@ -38,3 +39,48 @@ Create it with kubectl apply -f https://k8smastery.com/shpod.yaml
 Attach to shell with kubectl attach --namespace=shpod -ti shpod
 
 After finishing course kubectl delete -f https://k8smastery.com/shpod.yaml
+
+
+k get nodes -o wide
+k get no -o yaml
+
+k explain node
+k get services
+k get svc
+
+k get namespace
+k get ns
+k get pods --all-namespaces
+k get pods -n kube-system
+
+
+k -n kube-public get pods
+k -n kube-public get configmaps
+
+
+Which command shows all pods running on node "node1"?
+k describe node node1
+
+
+k run pingpong --image alpine ping 1.1.1.1
+k get all
+
+k logs pingpong
+k scale pingpong --replicas 3  
+k scale deployment pingpong --replicas 3
+
+k logs pingpong --tail 1 --follow
+ k delete pod pingpong
+
+
+k run --schedule="* /3 * * *" --restart=OnFailure --image=alpine sleep 10
+k get cronjobs
+
+
+k create deployment
+k scale deployment pingpong --replicas=8
+k create job
+k create cronjob
+
+k create -f foo.yaml
+k apply -f foo.yaml
