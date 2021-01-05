@@ -84,3 +84,23 @@ k create cronjob
 
 k create -f foo.yaml
 k apply -f foo.yaml
+
+
+
+k get pods -w
+k create deployment httpenv --image=bretfisher/httpenv
+k scale deployment httpenv --replicas=10
+k expose deployment httpenv --port 8888
+k get service
+k attach --namespace=shpod -ti shpod
+IP=$(k get svc httpenv -o go-template --template '{{.spec.clusterIP}}')
+
+k describe service httpenv
+k get endpoints
+k get endpoints httpenv -o yaml
+k get pods -l app=httpenv -o wide
+k delete deployment/httpenv service/httpenv
+
+
+curl -o docker-compose.yml https://k8smastery.com/dockercoins-compose.yml
+docker-compose up

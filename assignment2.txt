@@ -1,0 +1,82 @@
+These questions will either ask for you to enter a kubectl command, other shell commands, or ask for a long-form answer. For each one expecting a command, test your answers, and then use that command as the answer to the assignment question.
+
+The goal here is to practice thinking of kubectl commands to solve your own problems, without resorting to looking at answers. It'll help you get used to the CLI if you force yourself to use the --help as much as possible. The long-form questions are to get you thinking about the "why" of things in Kubernetes, which will deepen your understanding.
+
+Questions for this assignment
+1)Create a deployment called littletomcat using the tomcat image.
+kubectl create deployment littletomcat --image=tomcat
+
+
+2) What command will help you get the IP address of that Tomcat server?
+List all pods with label app=littletomcat, with extra details including IP address: kubectl get pods --selector=app=littletomcat -o wide
+You could also describe the pod: kubectl describe pod littletomcat-XXX-XXX
+
+3) What steps would you take to ping it from another container?    k get pods --selector=app=littletomcat -o json | jq .items[0].status.podIP | xargs ping                           
+(Use the shpod environment if necessary)
+
+One way to start a shell inside the cluster:
+
+kubectl apply -f https://k8smastery.com/shpod.yaml
+
+then
+
+kubectl attach --namespace=shpod -ti shpod
+A short cut way is to run that like this (a special domain name we created) curl https://shpod.sh | sh
+
+Then the IP address of the pod should ping correctly. You could also start a deployment or pod temporarily (like nginx), then exec in, install ping, and ping the IP.
+
+4)What command would delete the running pod inside that deployment?
+We can delete the pod with: kubectl delete pods --selector=app=littletomcat or copy/paste the exact pod name and delete it.
+
+5)What happens if we delete the pod that holds Tomcat, while the ping is running?
+If we delete the pod, the following things will happen:
+
+the pod will be gracefully terminated
+
+the ping command that we left running will fail
+
+the replica set will notice that it doens't have the right count of pods and create a replacement pod
+
+that new pod will have a different IP address (so the ping command won't recover)
+
+
+6)What command can give our Tomcat server a stable DNS name and IP address?   k expose deployment littletomcat --port=8080                                      
+
+(An address that doesn't change when something bad happens to the container)
+
+We need to create a Service for our deployment, which will have a ClusterIP that is usable from within the cluster.
+ One way is with kubectl expose deployment littletomcat --port=8080
+
+(The Tomcat image is listening on port 8080 according to Docker Hub)
+
+Another way is with kubectl create service clusterip littletomcat --tcp 8080
+
+
+7)What commands would you run to curl Tomcat with that DNS address? k get pods --selector=app=littletomcat -o json | jq -r .items[0].status.podIP | xargs -I {} curl {}:8080
+
+(Use the shpod environment if necessary)
+In a shpod environment, we could:
+
+- Install curl in Alpine
+
+apk add curl
+
+- Make a request to the littletomcat service
+
+curl http://littletomcat:8080
+
+If in shpod, you need to specify the different namespace
+
+curl http://littletomcat.default:8080
+
+Note that shpod runs in the shpod namespace, so to find a DNS name of a different namespace in the same cluster, you should use <hostname>.<namespace> syntax. That was a little advanced, so A+ if you got it on the first try!
+
+Also Note, shpod is set so that kubectl uses the default namespace as its context, which means you don't have to add -n default to all your kubectl commands.
+
+
+8)If we delete the pod that holds Tomcat, does the IP address still work? How could we test that? 
+
+Yes. If we delete the pod, another will be created to replace it. The ClusterIP will still work.                                                           
+
+(Except during a short period while the replacement container is being started)
+Yes, a new pod is spawned.k delete pod littletomcat-7b6c88c67d-jn56n
