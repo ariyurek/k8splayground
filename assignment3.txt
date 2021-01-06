@@ -1,0 +1,60 @@
+Let's deploy another application called wordsmith
+Wordsmith has 3 components:
+
+a web frontend bretfisher/wordsmith-web
+
+an API backend bretfisher/wordsmith-words
+
+a postgres DB bretfisher/wordsmith-db
+
+These images have been built and pushed to Docker Hub
+
+We want to deploy all 3 components on Kubernetes
+
+
+
+Here's how the parts of this app communicate with each other:
+
+The web frontend listens on port 80
+
+The web frontend should be public (available on a high port from outside the cluster)
+
+The web frontend connects to the API at the address http://words:8080
+
+The API backend listens on port 8080
+
+The API connects to the database with the connection string pgsql://db:5432
+
+The database listens on port 5432
+
+Your Assignment is to create the kubectl create commands to make this all work
+This is what we should see when we bring up the web frontend on our browser:
+
+- Yes, there is some repetition in that sentence; that's OK for now
+
+- If you see empty LEGO bricks, something's wrong ...
+
+Questions for this assignment
+What deployment commands did you use to create the pods?
+kubectl create deployment db --image=bretfisher/wordsmith-db
+kubectl create deployment web --image=bretfisher/wordsmith-web
+kubectl create deployment words --image=bretfisher/wordsmith-words
+
+What service commands did you use to make the pods available on a friendly DNS name?
+kubectl expose deployment db --port=5432
+kubectl expose deployment web --port=80 --type=NodePort
+kubectl expose deployment words --port=8080
+or
+kubectl create service clusterip db --tcp=5432
+kubectl create service nodeport web --tcp=80
+kubectl create service clusterip words --tcp=8080
+
+Then you'll want to get the port that web is listening on the host:
+
+kubectl get service web
+
+If we add more wordsmith-words API pods, then when the browser is refreshed, you'll see different words. What is the command to scale that deployment up to 5 pods? Test it to ensure a browser refresh shows different words.
+
+kubectl scale deployment words --replicas=5
+
+

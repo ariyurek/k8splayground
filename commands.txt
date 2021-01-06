@@ -104,3 +104,36 @@ k delete deployment/httpenv service/httpenv
 
 curl -o docker-compose.yml https://k8smastery.com/dockercoins-compose.yml
 docker-compose up
+
+
+k create deployment redis --image=redis
+k create deployment hasher --image=dockercoins/hasher:v0.1
+k create deployment rng --image=dockercoins/rng:v0.1
+k create deployment webui --image=dockercoins/webui:v0.1
+k create deployment worker --image=dockercoins/worker:v0.1
+
+k get deploy -w to watch deployment events
+k logs deploy/rng
+k logs deploy/worker
+
+k expose deployment redis --port 6379
+k expose deployment rng --port 80
+k expose deployment hasher --port 80
+
+k expose deploy/webui --type=NodePort --port=80
+k get svc
+
+k scale deployment worker --replicas=2
+
+k create -f dockercoins.yaml --> create resources if they do not exist.If exist do not alter them
+k apply -f dockercoins.yaml --> create resources if they do not exist.If exist update them
+
+The manifest can contain multiple resources seperated by ----
+
+k apply -f insecure-dashboard.yaml
+k get svc  dashboard
+
+minikube dashboard
+microk8.enable dashboard  
+kube web view
+kube ops view
