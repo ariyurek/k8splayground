@@ -137,3 +137,13 @@ minikube dashboard
 microk8.enable dashboard  
 kube web view
 kube ops view
+
+
+k get pods -l app=rng
+k get pods --selector app=rng
+k label pods -l app=rng enabled=yes
+k edit service rng 
+
+
+POD=$(kubectl get pod -l app=rng,pod-template-hash -o name)
+kubectl logs --tail 1 --follow $POD
