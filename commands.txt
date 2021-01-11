@@ -147,3 +147,15 @@ k edit service rng
 
 POD=$(kubectl get pod -l app=rng,pod-template-hash -o name)
 kubectl logs --tail 1 --follow $POD
+
+k create deployment web --image nginx -o yaml --dry-run
+
+k explain pod.spec.volume
+
+k explain pod.spec --recursive
+
+dump yaml with k get -o yaml
+
+k create deployment web --image=nginx -o yaml > web.yaml
+k apply -f web.yaml --dry-run --validate=false -o yaml
+k apply -f web.yaml --server-dry-run --validate=false -o yaml
