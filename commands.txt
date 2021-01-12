@@ -159,3 +159,19 @@ dump yaml with k get -o yaml
 k create deployment web --image=nginx -o yaml > web.yaml
 k apply -f web.yaml --dry-run --validate=false -o yaml
 k apply -f web.yaml --server-dry-run --validate=false -o yaml
+
+maxunavailable %25, maxsurge %25
+deployments,daemonsets,statefulsets
+k rollout
+k get pods -w
+k get replicasets -w
+k get deployments -W
+
+k rollout status deploy worker
+k rollout undo deploy worker
+k rollout status deploy worker
+k rollout history deployment worker
+k describe replicasets -l app=worker | grep -A3 Annotations
+k rollout undo deployment worker --to-revision=1
+k edit deployment worker
+k patch
