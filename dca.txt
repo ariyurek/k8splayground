@@ -1,0 +1,1093 @@
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y nginx
+COPY index.nginx-debian.html /var/www/html
+CMD nginx -g 'daemon off;'
+
+docker build -t name01 .
+docker container run -dt --name nginx2 -p 8080:80 nginx sh
+curl 127.0.0.1:8080
+docker container inspect nginx2
+docker container exec -it nginx2 sh
+apt-get update && apt-get install net-tools -y
+netstat -ntlp
+
+docker run -dt --name tmp  --health-cmd "curl --fail http://localhost" --health-interval=5s busybox sh
+ 
+docker run -dt --name tmp2 --health-cmd "curl -f http://localhost" --health-interval=5s --health-retries=1 busybox sh
+ 
+curl  http://dexter.kplabs.in/test
+ 
+curl -f http://dexter.kplabs.in/test214.txt
+
+--ZEAL VORA
+FROM busybox
+RUN mkdir -p /root/demo
+WORKDIR /root/demo
+RUN touch file01.txt
+CMD ["/bin/sh"]
+
+
+FROM busybox
+RUN mkdir -p /root/demo/context1/context2
+WORKDIR /root/demo
+WORKDIR context1
+WORKDIR context2
+RUN touch file01.txt
+CMD ["/bin/sh"]
+
+ 
+FROM busybox
+ENV NGINX 1.2
+RUN touch web-$NGINX.txt
+CMD ["/bin/sh"]
+Using ENV in CLI:
+
+docker run -dt --name env02 --env USER=ADMINUSER busybox sh
+
+docker exec -it env02 sh
+echo $USER
+
+docker history nginx
+
+
+Base Dockerfile
+
+FROM busybox
+RUN touch custom.txt
+CMD ["/bin/sh"]
+docker build -t myapp .
+
+Save and Load Images
+
+docker save myapp > myapp.tar
+docker load < myapp.tar
+
+-------------------------------------------------------
+Document - Sample Code for Layer Caching
+Dockerfile
+
+FROM python:3.7-slim-buster
+COPY . .
+RUN pip install --quiet -r requirements.txt
+ENTRYPOINT ["python", "server.py"]
+requirements.txt
+
+certifi==2018.8.24
+chardet==3.0.4
+Click==7.0
+cycler==0.10.0
+decorator==4.3.0
+defusedxml==0.5.0
+Build Commands:
+
+docker build -t without-cache .
+docker build -t with-cache .
+
+docker network ls
+docker inspect bridge
+route -n
+brctl show
+docker network create --driver bridge mybridge
+docker inspect mybridge
+docker container run -dt --name mybridge01 --network mybridge ubuntu
+
+docker service ls
+systemctl stop docker
+systemctl enable docker
+---------------------------------------------------------
+Document - Docker Script
+Note:
+
+Step 1: Open a text file named docker-install.sh via the vi editor
+
+vi docker-install.sh
+
+Step 2: Paste the following script within the text file and save it
+
+#!/bin/bash
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum -y install docker-ce
+systemctl start docker
+systemctl enable docker
+Step 3: Make the script executable:
+
+chmod +x docker-install.sh
+
+Step 4: Run the script:
+
+./docker-install.sh
+
+docker node ls
+--------------------------------------------
+Document - Initializing Swarm Cluster
+ Initialize the Swam Manager [Run this from swam01 server]
+
+ifconfig eth0
+docker swarm init --advertise-addr 142.93.214.57
+Verify the Node status
+
+docker node ls
+
+
+------------------------------------------------------
+Document - Replicated Service CLI Command
+Create a new docker service:
+
+docker service create --name webserver --replicas 1 nginx
+
+Verify service status:
+
+docker service ps webserver
+
+docker service scale webserver = 5
+docker service update --replicas 5 mywebserver
+----------------------------------------------------------
+Document - Scaling Service CLI Command
+Scaling Up Operation
+
+docker service scale webserver=5
+
+Scaling Down Operation
+
+docker service scale webserver=1
+
+Verify Service Details:
+
+docker service ps webserver
+
+Remove Service After Practical:
+
+docker service rm webserver
+
+----------------------------
+
+Document - Multiple Approaches for Scaling
+Two Approaches:
+
+docker service scale service01=1
+docker service update --replicas 1 service02
+Scaling Multiple Services Together:
+
+docker service scale service01=3 service02=3
+
+-------------------------------------
+Document - Global Service CLI Command
+Global Service
+
+docker service create --name antivirus --mode global -dt ubuntu
+
+docker service ps antivirus
+
+Replicated Service
+
+docker service create myreplica --replicas 1 nginx
+
+---------------------------------------------
+Document - Drain CLI Commands
+Change the Node Availability to Drain
+
+docker node update --availability drain swarm03
+
+Verify Node status
+
+docker node ls
+
+Change the Node Availability To Active
+
+docker node update --availability active swarm03
+
+Document - Inspecting Services and Nodes
+Inspecting a Service
+
+docker service inspect demotroubleshoot
+docker service inspect demotroubleshoot --pretty
+Inspecting a Node
+
+docker node inspect swarm01
+docker node inspect swarm01 -pretty
+
+--------------------------------------------
+Document - Publish Port at Service
+Create a Service by Publishing port
+
+docker service create --name mywebserver --replicas 1 --publish 8080:80 nginx
+
+Verify Ports in Linux Server
+
+netstat -ntlp
+
+Verify IP address
+
+ifconfig eth0
+
+Curl Request to IP on port 8080
+
+curl 142.93.214.57:8080
+
+
+docker-compose up -d
+docker-compose down
+docker-compose config
+
+-----------------------------------------------------
+Document - Docker Compose YAML
+Documentation Referred:
+
+https://docs.docker.com/compose/install/
+
+Commands used for Installing Docker Compose in Linux:
+
+curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+Sample Wordpress Compose file used:
+
+Step 1: Create a new directory named wordpress
+
+mkdir wordpress
+cd wordpress
+
+
+Step 2: Create a file named docker-compose.yml and store the below snippet there:
+
+
+
+version: '3.3'
+ 
+services:
+   db:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: somewordpress
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: wordpress
+ 
+   wordpress:
+     depends_on:
+       - db
+     image: wordpress:latest
+     ports:
+       - "8000:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: db:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: wordpress
+       WORDPRESS_DB_NAME: wordpress
+volumes:
+    db_data: {}
+Start Docker Compose
+
+docker-compose up -d
+
+Bring Down application started via Docker Compose
+
+docker-compose down
+---------------------------------------------------
+Document - Docker Stack CLI commands
+docker-compose.yml
+
+version: '3'
+services:
+  webserver:
+    image: nginx
+    ports:
+       - "8080:80"
+  database:
+    image: redis
+Deploy Stack:
+
+docker stack deploy --compose-file docker-compose.yml mydemo
+
+Remove Stack
+
+docker stack rm mydemo
+-------------------------
+
+Document - AutoLock Commands Setting up Autolock
+
+docker swarm update --autolock=true
+systemctl restart docker
+docker node ls
+docker swarm unlock
+To Retrieve Key after swam is unlocked
+
+docker swarm unlock-key
+
+To rotate the key:
+
+docker swarm unlock-key --rotate
+-------------------------------
+
+
+Document - Mount Volumes with Swarm
+Create Service with Volume
+
+docker service create --name myservice --mount type=volume,source=myvolume,target=/mypath nginx
+
+Verify the Host where service is created:
+
+docker service ps myservice
+
+Connect to Container and Verify Mount
+
+docker container exec -it [CONTAINER-ID] bash
+ls -l /
+Verify Volume Information
+
+docker volume ls
+
+Remove Service
+
+docker service rm myservice
+
+-------------------------------------
+Document - Setting Constraints
+Creating Service with Node Label Constraints
+
+docker service create --name myconstraint --constraint node.labels.region==blr --replicas 3 nginx
+
+Add a Label to Node:
+
+docker node update --label-add region=mumbai swarm03
+
+Running Nodes in Mumbai Region
+
+docker service create --name myconstraint --constraint node.labels.region==mumbai --replicas 3 nginx
+
+
+
+--------------------------------------------------------------------------
+Document - Custom Overlay Networks
+Create Service with Custom Overlay Network:
+
+docker service create --name myoverlay --network mynetwork --replicas 3 nginx
+
+Verify Networks:
+
+docker network ls
+
+Find the IP of Container
+
+docker container inspect [CONTAINER-NAME]
+
+Connect to Container and Install Ping
+
+docker container exec -it [CONTAINER-NAME]
+apt-get update && apt-get install iputils-ping
+ping [IP]
+-----------------------------------------------------------------------------------
+Document - Forcing New Cluster
+docker swarm init --force-new-cluster --advertise-addr 206.189.139.211:2377
+-----------------------------------------------------------------------
+docker system df
+docker system info
+-----------------------
+
+
+Document - Installation of Docker DTR(Docker Trusted Registry)
+docker run -it --rm docker/dtr install --ucp-node node01 --ucp-username admin --ucp-url https://159.89.168.70 --ucp-insecure-tls
+
+----------------------------------
+Document - Un-Installing DTR
+Installing DTR:
+
+docker run -it --rm docker/dtr install --ucp-node node01 --ucp-username admin --ucp-url https://159.89.168.70 --ucp-insecure-tls
+
+
+
+Uninstalling DTR:
+
+docker run -it --rm docker/dtr:2.6.3 destroy --ucp-insecure-tls
+
+
+
+Blog to remove DTR entry from UCP:
+
+
+
+https://success.docker.com/article/extra-dtr-listed-in-ucp-31x-requiring-removal
+
+
+
+TLS Output:
+
+
+
+INFO[0006] Generated TLS certificate. dnsNames="[*.com *.*.com example.com *.dtr *.*.dtr]" domains="[*.com *.*.com 172.17.0.1 example.com *.dtr *.*.dtr]" ipAddresses="[172.17.0.1]"
+-------------------------------------------
+docker login 172.17.0.1
+Document - Configuring Trusted CA and Pushing Images to DTR
+wget https://159.65.151.132/ca --no-check-certificate
+cp ca /etc/pki/ca-trust/source/anchors/example.com.crt
+update-ca-trust
+systemctl restart docker
+docker tag busybox:latest example.com/admin/webserver:v1
+docker push exam
+docker push example.com/admin/webserver:v1
+----------------------------------------------------------
+Document - DTR Backup Command
+docker run --log-driver none -i --rm docker/dtr backup --ucp-url https://172.31.40.237 -ucp-insecure-tls --ucp-username admin --ucp-password YOUR-PASSWORD-HERE > backup.tar
+--------------------------------------------------------------
+Routing mesh enables each node in the swarm to accept connections on published ports for any service running in the swarm,
+even if there's no task running on the node.
+
+docker service create --name webserver --publish published=8080,target=80 --replicas 1 nginx
+netstat -ntlp
+
+Document - S3 Storage Backend
+Documentation Referred
+
+https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region
+
+Configurations used in video:
+
+Regional Endpoint = https://s3.us-east-1.amazonaws.com
+
+AWS Region = us-east-1
+
+---------------------------------------------------------------
+Document - Configuring DTR HA
+Join the DTR Replica
+
+docker run -it --rm docker/dtr join --ucp-insecure-tls
+
+Connect to Endpoints:
+
+curl -k https://142.93.213.134/_ping
+curl -ksl -u admin:88DBJTWmxMCL6J9KpfgpGBq5UvsMfxL1 https://142.93.213.134/api/v0/meta/cluster_status
+
+----------------------------------
+Document - UCP Client Bundle Integration
+curl -sSL https://get.docker.com/ | sh
+docker service create --name mydemoservice nginx
+----------------------------------------
+
+Document - CPU Limit Commands
+
+docker container run -dt --name constraint01 --cpus=1.5 busybox sh
+docker container run -dt --name constraint02 --cpuset-cpus=0,1 busybox sh
+------------------------------.
+docker swarm join-token worker
+docker swarm leave
+docker swarm ca --rotate
+
+----------------
+
+docker swarm init
+docker swarm init --advertise-addr 139.59.8.72
+docker secret ls
+docker secret create dbcreds db_creds.txt
+docker secret ls
+docker secret inspect dbcreds
+
+export  DOCKER_CONTENT_TRUST=1
+
+-----------------------------------
+Document - Changing Storage Drivers
+{
+  "storage-driver": "aufs"
+}
+
+
+Documentation Link :
+
+https://docs.docker.com/storage/storagedriver/select-storage-driver/
+-------------------------------
+cd /var/lib/docker
+cd overlay2
+docker volume ls
+docker volume --help
+docker volume create myvolume
+docker container run -dt --name busybox -v myvolume:/etc busybox sh
+docker volume inspect myvolume
+cd /var/lib/docker/volumes/myvolume/_data
+-------------------------
+when you use a bind mount, a file or directory on the host machine is mounted into a container
+cd /usr/share/nginx/html
+docker container run -dt --name nginxbind01 -v /root/index/:/usr/share/nginx/html nginx
+
+
+Document - Bind Mounts
+docker container run -dt --name mynginx -v /root/index:/usr/share/nginx/html nginx
+
+
+
+docker container run -dt --name mynginx --mount type=bind,source=/root/index,target=/usr/share/nginx/html nginx
+
+
+-------------------------------------------------
+
+docker container prune
+nano /etc/docker/daemon.json
+docker info
+----------------------------
+
+minikube status
+kubectl get storageclass
+kubectl get pvc
+kubectl get pv
+kubectl apply -f pod-pv.yaml
+kubectl get pods
+kubectl exec -it storage-pod -- sh
+kubectl get pvc kplabs-pvc -o yaml
+
+--------------------------------------
+Document - Volume Expansion Resource
+pod-pv.yaml
+
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: storage-pod
+spec:
+  containers:
+    - name: my-frontend
+      image: busybox
+      command:
+        - sleep
+        - "36000"
+      volumeMounts:
+      - mountPath: "/data"
+        name: my-do-volume
+  volumes:
+    - name: my-do-volume
+      persistentVolumeClaim:
+        claimName: kplabs-pvc
+pvc.yaml
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: kplabs-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: do-block-storage
+
+
+External Commands Used:
+
+kubectl edit pvc kplabs-pvc
+kubectl exec storage-pod -- sh
+df -h
+------------------------
+Document - Retail Reclaim Resource
+pvc-pv.yaml
+
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: kplabs-pvc
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+  volumeName: "pvc-31a92a51-e693-41b4-ad9c-6c53329f98f2"
+  storageClassName: do-block-storage
+-------------------------------------------
+A service is the definition of the tasks to execute on the manager or worker nodes.
+A task is a running container which is part of a swarm service and managed by a swarm manager, as opposed to a standalone container
+In which model, does the swarm manager distribute a specific number of replica tasks among the nodes based upon the scale you set in the desired state? Replicated
+In which model, does the swarm manager run one task for the service on every available node in the cluster?  global
+Services are really just “containers in production.”
+You can scale the app by changing the replicas value in docker-compose.yml, saving the change, and re-running the docker stack deploy command.
+Docker performs an in-place update, no need to tear the stack down first or kill any containers.
+
+tmpfs mounts are stored in the host system’s memory only, and are never written to the host system’s filesystem.
+
+Placement Preference evenly distributes services based on the label value of the nodes. If user has set a label value "default" for some nodes in cluster, then user can set a placement preference to spread the service evenly across those nodes who have "default" label value
+
+Placement Constraints are used to control the nodes on which a service can be deployed on. Unlike placement preference, in placement constraints, service deployment can fail if the appropriate node does not exist.
+
+Which of the following ports on Docker Host is used to allow overlay network traffic in swarm mode? UDP 4789
+
+Which of the following flags is used to publish container’s port(s) on an existing service in swarm? --publish-add
+
+Only replicated services can be scaled UP or DOWN to the desired number of replicas.
+
+Which of the following commands is used to revoke cluster management and orchestrating privileges from manager node? docker node demote
+
+Which of the following paths on docker Host is used by manager nodes to store swarm state and manager logs? /var/lib/docker/swarm
+
+Which of the following is the functionality of a storage driver? To manage the contents of image layers and writable container layers.
+
+Which of the following tools is used to provision and manage Docker Engine on one or more virtual hosts? docker-machine
+
+Which of the following is the scope of uniqueness for auto-generated anonymous volume name? docker host
+
+tmpfs is ephemeral and bind mount is less secure compared to volume so if the data to be stored is sensitive such as passwords or credentials, volumes are the ideal choice among the provided options.
+
+If you are using a Linux distribution to run Docker, which of the following storage drivers can NOT be used? ext4
+
+Which of the following commands will you use to log a forced stack trace to troubleshoot an unresponsive docker daemon? $sudo kill -SIGUSR1 $(pidof dockerd)
+
+Which of the following provisions of Docker supports modifications on storage drivers? Docker for Linux Distributions
+
+Which of the following offerings are used to sign a Docker Image on DTR? trust metadata
+
+Docker secrets are only available to swarm services, not to standalone containers. To use this feature, consider adapting your container to run as a service.
+
+Which of the following commands is used to connect the network to running container? docker network connect
+
+Docker CE has three types of update channels: stable, test, and nightly
+
+Which of the following Dockerfile instructions is used to provide defaults for an executing container? CMD
+
+Only the last CMD instruction in Dockerfile will be executed when a container starts running.
+
+Which of the following forms is the exec form of ENTRYPOINT Dockerfile instruction?  ENTRYPOINT ["executable", "param1", "param2"]
+
+Which of the following commands is used to list out all the layers of a Docker Image? docker history
+
+Which process’s output will be available on terminal as standard output as a result of docker attach command?  ENTRYPOINT/CMD
+
+docker exec command does not support a chained or a quoted command.
+
+Which of the following commands is used to backup Docker Images? docker save
+
+Which of the following commands is used to backup Docker containers?  DOCKER EXPORT
+---------------
+What will be the output of the following docker command?
+
+docker exec -it test-ubuntu "sudo apt-get update -y"
+
+The command format is not supported
+-----------
+You have a five node swarm cluster deployed on your local system. What will happen if the only manage node of the cluster fails?  swarm services will continue to run.
+----------------
+
+You have a swarm cluster which consists of 27 active nodes. Out of which, 9 nodes are managers and one node is the leader. What will be the fault tolerance and quorum of this swarm cluster respectively?
+4,5
+The fault tolerance equation is (N-1)/2 and quorum equation is (N/2)+1 where N = total number of manager nodes in swarm cluster
+
+---------------------
+Which of the following units of the swarm instructs worker to run a task? Scheduler
+
+Which of the following units of the swarm determines on which node a task will be scheduled?  dispatcher
+
+Which of the following components of the swarm allocates IP addresses to all running tasks?  Allocator
+
+Which of the following units of the swarm passes a task to its corresponding node using HTTP request/response?  Orchestrator
+
+Which of the following commands does not associate with docker volumes?  docker volume backup
+
+In order to configure Docker daemon to start as the system boots up, which of the following commands is correct for most Linux distributions? sudo systemctl enable docker
+
+The docker service create command does not support the -v or --volume flag. While mounting a volume into a service’s containers, you must use the --mount flag.
+
+Which of the following is not an object of The Container Network Model ? Services
+
+Which of the following is the default logging driver of Docker for Linux distributions? json-file
+
+Task is a unidirectional mechanism.
+
+Which of the following commands is used to start a docker daemon manually?  dockerd
+
+dockerd is the persistent process that manages containers. Docker uses different binaries for the daemon and client. To run the daemon you type dockerd
+
+What is the scope of the overlay network driver in Docker? swarm
+
+Which of the following file-systems is NOT supported by docker to serve as its backend of storage drivers?  overlay2
+
+Which of the following network drivers utilizes VXLAN data plane to decouple docker network from the underlay physical network?  overlay
+
+What is the default network for swarm services? ingress
+
+Which of the following is the default network driver for docker containers? bridge
+
+Which docker network is used to connect one or more docker daemons of participating nodes in swarm cluster?  docker_gwbridge
+
+Which of the following Dockerfile instructions confirms Docker’s core concepts of source control and cheap commits? Run
+
+Which of the following is NOT a part of the grant permission in UCP? Certificates
+
+Which of the following is not managed by Docker hub? containers
+
+Which of the following is not an object of The Container Network Model ? services
+
+Which of the following orders is recommended to backup the components of Docker EE? docker swarm > UCP > DTR
+
+Which of the following is NOT Docker Certified Infrastructure? DigitalOcean
+
+Containers connected to a default bridge network do not forward their network traffic to the outside world. True
+
+Which of the following containers manages the DTR authentication? dtr-grant-<replica-id>
+
+Which of the following flags is not supported by docker service create command?  -v
+
+Device Mapper
+● loop-lvm mode is for testing purposes only.
+● direct-lvm mode can be used in production.
+
+How many sub-networks can be created on the default bridge network?  1
+
+Which of the following ways is not used for container identification? Uniform Resource Identifier
+-----------------
+The output of the following docker run command returned non-zero exit code. What could be the possible reason?
+
+$ docker run --foo alpine echo $?
+
+# flag provided but not defined: --foo
+See 'docker run --help'.
+125
+
+There is an error with docker daemon.
+---------------
+What will be the outcome of a docker cp command if the SRC_PATH is a file and the DEST_PATH is a directory?
+The source file will be copied into DEST_PATH and will be saved as the basename from SRC_PATH
+-----------------
+
+Which of the following is the default mount point for a decrypted secret in a Linux container?  /run/secrets/<secret_name>
+
+Docker configs are  not encrypted and stored inside the container’s RAM.
+
+Which of the following sockets are used by docker daemon to listen to Docker Engine API requests? tcp fd unix
+
+By default, how many layers of a docker image does docker daemon push to the Docker registry at a time?  5
+
+Which of the following commands is used to update the container’s configuration dynamically?  docker update
+
+Which of the following is responsible for merging host’s already present cached image layers with pulled image layers? aufs
+
+Which of the following storage drivers is used for testing purposes and for systems without a copy-on-write strategy? vfs
+
+Which of the following storage drivers are block-level storage drivers? zfs device-mapper
+
+The overlay storage driver only works with 2 layers: lowerdir and upperdir. True
+
+Which of the following is the default AppArmor security profile for containers in Docker? docker-default
+
+Which of the following commands is used to force a worker-1 node to leave the swarm cluster?  docker swarm leave --force
+
+If the type of orchestrator is changed, the existing workload will not migrate to the new orchestrator automatically.  
+
+Which of the following commands is used to schedule swarm workloads on a node?  docker node update \ --label-add com.docker.ucp.orchestrator.swarm = true <node-id>
+
+Which of the following networks is used as the default network for kubernetes by Universal Control Plane? Calico
+
+The repository’s name should be 2 to 255 characters long.
+
+Which of the following endpoints exposed by DTR is used to monitor the health of DTR replicas? /_ping
+
+Which of the following is not a type of Webhook? TAG_REPAIR
+
+What is a Pause Container? An empty container which holds cgroups,reservations,namespaces of a pod before its individual container is created.
+
+Is it possible to join a new node to a swarm cluster after removing Universal Control Plane from the cluster?  Yes,you can reinstall UCP on the cluster and then join the node.
+
+What is the role of the mode variable in Docker Content Trust? It instructs the docker engine whether to enforce signed docker images or not.
+
+By default, Docker runs through a non-networked UNIX socket. True
+
+What is a “Builder Pattern” in Docker? It is a design pattern used to maintain 2 individual Dockerfiles for app development and production purposes.
+
+Docker registry is an instance of Docker Hub. False Docker Hub is an instance of a Docker Registry.
+
+Services using the routing mesh are running in the Virtual IP mode.
+
+Which of the following commands is used to create an overlay network for standalone containers?  docker network create -d overlay --attachable test-overlay
+
+From whom does the container inherit the default DNS settings? docker daemon
+
+What is the default location of the configuration files of Docker CLI?  ~/.docker
+
+How many characters can be contained in an image tag name? 128
+
+Docker config is only supported by Linux containers. False Configs are supported on both Linux and Windows services.
+
+Which of the following networks is responsible for communication between DTR components running on different nodes? dtr-ol
+
+Which of the following security frameworks is used as the underlying framework in Notary to create, manage, and distribute the metadata to ensure the integrity and origin of the content?  TUF
+
+Which of the following UCP services is used to collect Docker system information for troubleshooting? ucp-dsinfo
+
+Which of the following ports is generally used for Kubernetes Networking in UCP? TCP 179
+
+Which of the following commands is used to create a backup of a UCP manager node? docker container run --name ucp --volume /var/run/docker.sock:/var/run/docker.sock docker/ucp backup [command options] > backup.tar
+
+Which of the following in Docker content trust provides control over the image tag signing process? delegations
+
+Docker files scanned by antivirus software can hang the execution of Docker commands. true
+
+Which of the following commands is used to target a specific build stage out of multi-stage builds? docker build --target <build-stage-name> -t <image-name>
+
+Which of the following commands is used to disable container networking for a swarm service? None is not available for swarm services so none of the commands achieves network disability.
+
+In which of the following modes can the macvlan network be created?bridge mode
+
+What kind of encryption method is used to encrypt swarm service management traffic? AES-GCM
+
+The container is not assigned a single IP address for every Docker network it connects to.  
+
+By default, How many IP addresses can be allocated to a single overlay network? 256
+
+Which of the following docker daemon flags can be used as an equivalent of com.docker.network.bridge.host_binding_ipv4 option while creating a custom bridge network?  --ip
+
+What is the default value of the delay between two reset occurrences of a container? 100ms
+
+Which of the following isolation technologies is used in Docker Desktop for Windows? hypervisor
+
+What will be the outcome of docker cp command, if the SRC_PATH is a directory and the DEST_PATH is a file? An error will occur that it cannot copy a directory to a file.
+
+Which of the following filesystem changes (in a file or directory) are tracked with docker diff command? A file or directory was added or changed.
+
+Docker secrets are only available to swarm services, not to standalone containers.
+
+Which of the following is used to store the non-sensitive information outside the service’s image or running containers in Docker? docker config
+
+Which of the following logging drivers are mandatory for docker log command to successfully function? journald and json-file
+
+By default, how many layers of docker image does docker daemon pull from the docker registry at a time?  3
+
+Which of the following flags can be passed to make docker daemon listen to a specific IP or port? -H
+
+What is “live restore” in containers? A configuration to keep containers alive while docker daemon is unavailable.
+
+Which of the following is a pseudo-file containing the CPU usage accumulated by the processes of a container? cpuacct.stat
+
+Which of the following octal values represents the world-writable file mode for tmpfs storage? 1777
+
+Which of the following are the supported backing filesystems of overlay2 storage driver?  ext4 xfs with ftype=1
+
+How many lower OverlayFS layers does overlay2 natively support? 128
+
+Which operation does overlay/overlay2 storage driver perform to copy a file from lowerdir (image) to the upperdir (container)? copy_up
+
+Which of the following commands is used to generate a new root CA certificate and root CA key for the swarm cluster? docker swarm ca --rotate
+
+Which of the following options can compose a Kubernetes grant? role, subject, namespace
+
+Which of the following orchestrators are supported by Docker? Swarm, Kubernetes, Mixed
+
+What will be the orchestrator type of a newly promoted worker node? Mixed
+
+Which of the following commands is used to schedule kubernetes workloads on a node? docker node update --label-add com.docker.ucp.orchestrator.kubernetes=true <node-id>
+
+Which of the following commands is used to access audit logs of Universal Control Plane?  docker logs ucp-controller
+
+Bind mounts can be managed directly by Docker CLI commands.  False
+
+What will happen if you use --mount flag to bind-mount container's directory to a directory on Docker host which does not exist yet?
+Docker won't create any directory on Docker host and generate an error message.
+
+Which of the following constitutes a production-ready devicemapper configuration for the Docker. Utilize the '--storage-opt dm.directlvm_device' Docker daemon option,specifiying a block device.
+----------
+A container named "analytics" that stores results in a volume called "data" was created.
+
+docker run -d --name=analytics -v data:/data app1
+
+How are the results accessed in "data" with another container called "app2"?
+
+
+docker run -d --name=reports --volumes-from=analytics app2
+
+-------------
+
+Which of the following are types of namespaces used by Docker to provide isolation? Network, Process ID
+
+Which of the following is true about using the '-P' option when creating a new container? Docker binds each exposed container port to a random port on all the host's interface
+
+What is the purpose of multi-stage builds? Optimizing images by copying artifacts selectively from previous stages
+
+You want to provide a configuration file to a container at runtime. Does this set of Kubernetes tools and steps accomplish this?
+
+Turn the configuration file into a configMap object, use it to populate a volume associated with the pod, and mount that file from the volume to the appropriate container and path.
+
+Will this command mount the host's '/data' directory to the ubuntu container in read-only mode? docker run --volume /data:/mydata:ro ubuntu
+
+Does this command display all the pods in the cluster that are labeled as 'env: development'? kubectl get pods --all-namespaces -l env=development
+
+Does this describe the role of Control Groups (cgroups) when used with a Docker container? accounting and limiting of resources
+
+Will this command display a list of volumes for a specific container? docker container inspect nginx
+
+You are troubleshooting a Kubernetes deployment called api, and want to see the events table data for this object. Does this command display it?  kubectl describe deployment api
+
+Will this Linux kernel facility limit a Docker container's access to host resources, such as CPU or memory? cgroups
+
+Is this an advantage of multi-stage builds? optimizes Images by copying artifacts selectively from previous stages
+
+In the context of a swarm mode cluster, does this describe a node? an instance of the Docker engine participating in the swarm
+
+Restart policies only apply to containers, not swarm services. True
+
+Which option allows you to override the default Docker directory (/var/lib/docker) on Linux? data-root
+
+When running network in 'host' mode you can override the hostname of the container using which option of 'docker run'?  --hostname
+
+You can not use local file system if you’re deploying DTR with high-availability.  
+
+Docker EE is available on multiple platforms. Which of the following are not valid hardware platforms to run Docker EE?  Sun/Oracle Sparc
+
+Which flag should be specified for 'docker/dtr install' to configure DTR to have single sign-on (SSO) with UCP? --dtr-external-url
+
+The devicemapper can not only use a single block device when using direct-lvm mode.  
+
+Tasks are initialized in which state? New
+
+Which 'docker service update' flags are used to update the published ports of existing services? (select two)  --publish-rm --publish-add
+
+DTR only allows deleting images if that image hasn’t been signed. True
+
+Which ports have to be opened to allow traffic to, and from, docker hosts that will be part of an overlay network? (select three)
+TCP port 2377 for cluster management communications
+TCP and UDP port 7946 for communication among nodes  
+UDP port 4789 for overlay network traffic
+
+Changing the storage driver makes any containers you have already created inaccessible on the local system.  true
+
+When running network in 'host' mode you can override the dns related settings of the host by using which options of 'docker run'? (select two)  --dns --dns-search
+
+Which column of the 'docker node ls' command shows shows node participation in the Raft consensus? MANAGER STATUS
+
+Which column of the 'docker node ls' command shows whether or not the scheduler can assign tasks to the node? Availability
+
+Which of the following are valid states of the MANAGER STATUS column as shown when running 'docker node ls'? (select three) Leader, Reachable, Unavailable  --> LRU
+
+Which of the following are valid states of the AVAILABILITY column as shown when running 'docker node ls'? (select three)   Pause, Active, Drain --> PAD
+
+Which of the following are valid options for the '--update-failure-action' of the 'docker service create' and 'docker service update' commands? pause,continue,rollback --> PCR
+
+Which of the following is the correct order of service creation process in swarm mode? docker api > orchestrator > allocator > dispatcher > scheduler  --> doADS
+
+Which of the following make up container format?  namespaces , CONTROL GROUPS, UnionFS
+
+Which instruction will execute any commands in a new layer on top of the current image and commit the results?  Run
+
+With which type of mount may the data be stored anywhere on the host system? BIND Mounts
+
+What is the only instruction that may precede FROM in the Dockerfile? ARG
+
+Which instruction defines a variable that users can pass at build-time? ARG
+
+Which instruction allows you to configure a container that will run as an executable? ENTRYPOINT
+
+All application data traffic is not encrypted by default.  
+
+Which instruction's main purpose is to provide defaults for an executing container? CMD
+
+Which flag of docker run allows you to use a different container logging driver than the Docker daemon’s default? --log-driver
+ 
+If you use --mount to bind-mount a file or directory that does not yet exist on the Docker host, Docker does not automatically create it for you, but generates an error. But  -v or --volume  not generates an error.
+
+Swarm management commands like docker node ls only work on manager nodes. true
+
+Which two modes does Docker provide for delivering messages from the container to the log driver? non-blocking blocking
+
+Which of the following actions allow you to scale an app? You can scale the app by changing the replicas value in docker-compose.yml, saving the change, and re-running the docker stack deploy command. Docker performs an in-place update, no need to tear the stack down first or kill any containers.
+
+After restoring a swarm backup you should run 'docker swarm init' with which flag to ensure that the node does not attempt to connect to nodes that were part of the old swarm?  --force-new-cluster
+
+You can configure DTR to use your own certificates, so that it is automatically trusted by your users’ browser and client tools --> TRUE
+
+Macvlan networks can be created in which of the following modes?  Bridge mode, 802.1q trunk bridge mode
+
+Which of the following are valid values of the --restart flag for docker run?  unless-stopped, no , always, on-failure
+
+You have just executed 'docker swarm leave' on a worker node. What command can be run on the same node to confirm it has left the cluster?  docker system info
+
+What is the purpose of multi-stage builds? Optimizing images by copying artifacts selectively from previous stages
+
+Are these conditions sufficient for Kubernetes to dynamically provision a persistentVolume, assuming there are no limitations on the amount and type of available external storage?
+Condition: A default provisioner is specified, and subsequently a persistentVolumeClaim is created --> No
+Condition: A default storageClass is specified, and subsequently a persistentVolumeClaim is created. --> Yes
+
+
+Will this configuration achieve fault tolerance for managers in a swarm?
+Condition: only two managers, one active and one passive. --> No
+
+
+One of several containers in a pod is marked as unhealthy after failing its livenessProbe many times.
+Is this the action taken by the orchestrator to fix the unhealthy container?
+Kubernetes automatically triggers a user-defined script to attempt to fix the unhealthy container. --> No
+The unhealthy container is restarted --> No
+
+
+Two development teams in your organization use Kubernetes and want to deploy their applications while ensuring that Kubernetes-specific resources, such as secrets, are grouped together for each application.
+Is this a way to accomplish this?
+Create one pod and add all the resources needed for each application --> No
+Add all the resources to the default namespace. --> No
+
+
+You want to provide a configuration file to a container at runtime. Does this set of Kubernetes tools and steps accomplish this?
+Turn the configuration file into a configMap object and mount it directly into the appropriate pod and container using the .spec.containers.configMounts key --> No
+Mount the configuration file directly into the appropriate pod and container using the .spec.containers.configMounts key --> No
+Turn the configuration file into a configMap object, use it to populate a volume associated with the pod, and mount that file from the volume to the appropriate container and path. --> yes
+
+
+Will this command mount the host's '/data' directory to the ubuntu container in read-only mode?
+docker run --add-volume /data /mydata -read-only ubuntu --> No
+docker run -v /data:/mydata --mode readonly ubuntu --> no
+docker run --volume /data:/mydata:ro ubuntu --> yes
+
+
+Does this command display all the pods in the cluster that are labeled as 'env: development'?
+kubectl get pods -l env=development --> No
+kubectl get pods --all-namespaces -label env=development --> no
+kubectl get pods --all-namespaces -l env=development --> yes
+
+
+Will this command display a list of volumes for a specific container?
+docker volume logs nginx --containers --> no
+docker volume inspect nginx --> no
+docker container logs nginx --volumes -->no
+docker container inspect nginx --> yes
+
+You want to create a container that is reachable from its host's network. Does this action accomplish this?
+Use --link to access the container on the bridge network --> no
+
+
+You are troubleshooting a Kubernetes deployment called api, and want to see the events table data for this object. Does this command display it?
+kubectl logs deployment api --> no
+kubectl events deployment api --> no
+kubectl describe deployment api --> yes
+
+
+A users attempts to set the system time from inside a Docker container are unsuccessful. Could this be blocking this operation?
+inter-process communication  --> no
+Linux Capabilities --> yes
+ 
+ 
+A persistentVolumeClaim (PVC) is created with the specification storageClass "" and size requirements that cannot be satisfied by any existing persistentVolume.
+Is the below scenario true?
+The PVC remains unbound until a persistentVolume that matches all requirements of the PVC becomes available --> yes
+
+
+Is this a function of UCP?
+scans images to detect any security vulnerability --> no
+image role-based access control --> no
+
+
+You are running only Kubernetes workloads on a worker node that requires maintenance, such as installing patches or an OS upgrade
+Which command must be run on the node to gracefully terminate all pods on the node, while marking the node as unschedulable? kubectl drain <node-name>
+
+
+When an application being managed by UCP fails, you would like a summary of all requests made to the UCP API in the hours leading up to the failure.
+What must be configured correctly beforehand for this to be possible?  UCP audit logs must be set to the metadata or request level
+
+
+During the development of an application meant to be orchestrated by Kubernetes, you want to mount the /data directory on your laptop into a container.
+Will this strategy successfully accomplish this?
+Add a volume to the pod that sets hostPath.path: /data, and then mount this volume into the pod's containers as desired. --> No
+Create a PersistentVolume with storageciass: "" and hostPath: /data, and a persistentVolumeClaim requesting this PV. --> Yes
+
+ 
+
+
+
+
+
+
+
+

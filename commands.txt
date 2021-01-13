@@ -175,3 +175,21 @@ k describe replicasets -l app=worker | grep -A3 Annotations
 k rollout undo deployment worker --to-revision=1
 k edit deployment worker
 k patch
+
+git clone https://github.com/bretfisher/kubercoins
+
+k apply -f . 
+
+Get the clusterIP address of the rng service
+k get svc rng
+k get events -w
+k get pords -w
+
+
+https://github.com/bretfisher/redis-tini
+
+https://kubernetes.io/docs/tasks/inject-data-application/downward-api-volume-expose-pod-information/
+
+https://kubernetes.io/docs/tasks/inject-data-application/environment-variable-expose-pod-information/
+
+k create configmap my-app-config --from-file=app.conf
