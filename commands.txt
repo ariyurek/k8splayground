@@ -211,3 +211,7 @@ k describe -n ingress-nginx deploy/nginx-ingress-controller
 nip.io dns
 
 curl -O https://k8smastery.com/ingress.yaml
+
+k get ingress
+k describe ingress cheddar
+k get ingress/stilton -o yaml
