@@ -1,0 +1,48 @@
+https://kubernetes.io/docs/tasks/tools/install-kubectl/
+
+snap install kubectl --classic
+
+kubectl version --client
+
+
+
+https://minikube.sigs.k8s.io/docs/start/
+curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+sudo dpkg -i minikube_latest_amd64.deb
+
+
+minikube start
+minikube status
+minikube stop
+
+minikube dashboard
+
+Delete all of the minikube clusters:
+
+minikube delete --all
+
+Deploy applications
+Create a sample deployment and expose it on port 8080:
+
+kubectl create deployment hello-minikube --image=k8s.gcr.io/echoserver:1.4
+kubectl expose deployment hello-minikube --type=NodePort --port=8080
+
+It may take a moment, but your deployment will soon show up when you run:
+
+kubectl get services hello-minikube
+The easiest way to access this service is to let minikube launch a web browser for you:
+
+minikube service hello-minikube
+
+minikube service hello-minikube --url
+
+Alternatively, use kubectl to forward the port:
+
+kubectl port-forward service/hello-minikube 7080:8080
+
+kubectl delete services hello-minikube
+kubectl delete deployment hello-minikube
+
+
+
+https://kodekloud.com/p/public-labs?scenario=kubernetes-for-beginners-basiccommands-test
