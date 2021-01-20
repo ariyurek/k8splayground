@@ -1,0 +1,24 @@
+pod-definition.yml
+apiVersion: v1
+kind:  POD Service ReplicaSet Deployment
+metadata:
+    name: myapp-pod
+    labels:
+        app: myapp
+        tier: frontend
+spec:
+    containers:
+        - name: nginx-container
+          image: nginx
+---------------------------
+
+kubectl create -f pod-definition.yml
+kubectl get pods -o wide
+kubectl describe pod myapp-pod
+kubectl run nginx --image=nginx
+kubectl get pods nginx
+kubectl delete pod nginx
+
+kubectl run redis --image=redis123 --dry-run=client -o yaml > pod.yaml
+kubectl apply -f pod.yaml
+kubecctl edit pod redis 
