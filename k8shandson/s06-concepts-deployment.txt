@@ -1,0 +1,14 @@
+kubectl create -f deployment-definition.yml
+kubectl get deployments
+kubectl get replicaset
+kubectl get all
+
+kubectl rollout status deployment/frontend
+kubectl rollout history deployment/frontend
+
+kubectl apply -f deployment-definition.yml --> after the change
+
+kubectl rollout undo deployment/frontend
+
+kubectl edit deployment frontend --record=true
+kubectl delete deployment frontend
