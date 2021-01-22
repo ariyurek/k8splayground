@@ -1,0 +1,8 @@
+kubectl create -f service-definition.yml
+kubectl get services
+minikube service myapp-service --url
+kubectl describe svc kubernetes
+
+
+https://github.com/mmumshad/kubernetes-example-voting-app
+https://github.com/dockersamples/example-voting-app
