@@ -1,0 +1,15 @@
+kubectl run nginx --image=nginx  --dry-run=client -o yaml
+kubectl get pods -o wide
+kubectl -n kube-system get pods
+kubectl get pods -l env=dev
+kubectl get pods -l env=dev --no-headers | wc -l
+kubectl taint nodes node-name key=value:taint-effect
+taint-effect --> NoSchedule,PreferNoSchedule,NoExecute
+kubectl taint nodes node1 app=blue:NoSchedule
+kubectl describe node kubemaster | grep -i Taint
+--yaml format
+tolerations
+ - effect: NoSchedule
+   key: app
+   operator: Equal
+   value: blue
