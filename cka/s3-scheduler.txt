@@ -13,3 +13,14 @@ tolerations
    key: app
    operator: Equal
    value: blue
+
+
+kubectl get nodes node01 color=blue
+kubectl get nodes node01 --show-labels
+
+kubectl get daemonsets
+kubectl create deployment elasticsearch --image=k8s.gcr.io/fluentd-elasticsearch:1.20 --dry-run=client -o yaml > elastic.yaml
+
+/etc/kubernetes/manifests static pod folder
+
+kubectl get pods -n kube-system
