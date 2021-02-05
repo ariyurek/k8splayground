@@ -12,6 +12,13 @@ docker container exec -it nginx2 sh
 apt-get update && apt-get install net-tools -y
 netstat -ntlp
 
+docker pull elasticsearch:7.9.3
+docker pull kibana:7.9.3
+docker volume create esvolume
+docker run -d -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" --name es01 -v esvolume:/data  elasticsearch:7.9.3
+docker run -d --link es01:elasticsearch -p 5601:5601 --name kibana kibana:7.9.3 
+docker run -d -p:6379:6379 --name redis redis
+
 docker run -dt --name tmp  --health-cmd "curl --fail http://localhost" --health-interval=5s busybox sh
  
 docker run -dt --name tmp2 --health-cmd "curl -f http://localhost" --health-interval=5s --health-retries=1 busybox sh

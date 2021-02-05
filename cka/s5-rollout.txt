@@ -1,0 +1,25 @@
+kubectl rollout status deployment/myapp-deployment
+kubectl rollout history deployment/myapp-deployment
+kubectl rollout undo deployment/myapp-deployment
+kubectl apply -f deployment-definition.yml
+kubectl get deployments
+kubectl get replicasets (kubectl get rs)
+
+imperative --> kubectl create configmap
+declarative --> kubectl create -f
+
+kubectl get configmaps (kubectl get cm)
+kubectl describe configmaps
+
+
+kubectl create secret generic app-secret --from-literal=DB_Host=mysql
+
+kubectl explain pods --recursive | less
+
+--os update
+kubectl drain node-1
+kubectl cordon node-1
+kubectl uncordon node-1
+
+kubectl upgrade plan
+kubectl upgrade apply
