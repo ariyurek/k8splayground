@@ -12,6 +12,8 @@ docker container exec -it nginx2 sh
 apt-get update && apt-get install net-tools -y
 netstat -ntlp
 
+
+docker pull redis
 docker pull elasticsearch:7.9.3
 docker pull kibana:7.9.3
 docker volume create esvolume

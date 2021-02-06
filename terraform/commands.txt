@@ -1,0 +1,11 @@
+terraform init
+terraform plan
+terraform apply
+terraform show
+terraform state list
+terraform state
+terraform plan -out=newplan
+terraform apply "newplan"
+terraform destroy
+terraform apply -var 'admin_username=plankton' -var 'admin_password=Password1234!'
+terraform output public_ip_address
