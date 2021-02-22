@@ -1,0 +1,3469 @@
+{
+  "name": "LT-17-244.exact.cs",
+  "normal": {
+    "tags": [
+
+    ]
+  },
+  "default": {
+    "audit": {
+      "inspec_backend_cache": true,
+      "reporter": "json-file",
+      "fetcher": null,
+      "insecure": null,
+      "quiet": true,
+      "profiles": {
+
+      },
+      "attributes": {
+
+      },
+      "waiver_file": null,
+      "json_file": {
+        "location": "C:\\chef\\compliance_reports\\compliance-20210219222245.json"
+      },
+      "run_time_limit": 1.0,
+      "result_message_limit": 10000,
+      "result_include_backtrace": false,
+      "control_results_limit": 50,
+      "chef_node_attribute_enabled": false
+    }
+  },
+  "automatic": {
+    "kernel": {
+      "os_info": {
+        "boot_device": "\\Device\\HarddiskVolume2",
+        "build_number": "18363",
+        "build_type": "Multiprocessor Free",
+        "caption": "Microsoft Windows 10 Enterprise",
+        "code_set": "1252",
+        "country_code": "1",
+        "csd_version": null,
+        "cs_name": "LT-17-244",
+        "current_time_zone": 60,
+        "data_execution_prevention_32_bit_applications": true,
+        "data_execution_prevention_available": true,
+        "data_execution_prevention_drivers": true,
+        "data_execution_prevention_support_policy": 2,
+        "debug": false,
+        "description": "",
+        "distributed": false,
+        "encryption_level": 256,
+        "foreground_application_boost": 2,
+        "install_date": "20201101220819.000000+060",
+        "large_system_cache": null,
+        "last_boot_up_time": "20210219203536.500000+060",
+        "local_date_time": "20210219232258.505000+060",
+        "locale": "0409",
+        "manufacturer": "Microsoft Corporation",
+        "max_number_of_processes": -1,
+        "max_process_memory_size": "137438953344",
+        "mui_languages": [
+          "en-US"
+        ],
+        "name": "Microsoft Windows 10 Enterprise|C:\\WINDOWS|\\Device\\Harddisk1\\Partition3",
+        "number_of_licensed_users": 0,
+        "number_of_processes": 415,
+        "number_of_users": 14,
+        "operating_system_sku": 4,
+        "organization": "Exact",
+        "os_architecture": "64-bit",
+        "os_language": 1033,
+        "os_product_suite": 256,
+        "os_type": 18,
+        "other_type_description": null,
+        "pae_enabled": null,
+        "plus_product_id": null,
+        "plus_version_number": null,
+        "portable_operating_system": false,
+        "primary": true,
+        "product_type": 1,
+        "registered_user": "Exact",
+        "serial_number": "00329-00000-00003-AA242",
+        "service_pack_major_version": 0,
+        "service_pack_minor_version": 0,
+        "size_stored_in_paging_files": "18006392",
+        "status": "OK",
+        "suite_mask": 272,
+        "system_device": "\\Device\\HarddiskVolume4",
+        "system_directory": "C:\\WINDOWS\\system32",
+        "system_drive": "C:",
+        "total_visible_memory_size": "16654920",
+        "version": "10.0.18363",
+        "windows_directory": "C:\\WINDOWS"
+      },
+      "name": "Microsoft Windows 10 Enterprise",
+      "release": "10.0.18363",
+      "version": "10.0.18363  Build 18363",
+      "os": "WINNT",
+      "product_type": "Workstation",
+      "server_core": false,
+      "cs_info": {
+        "admin_password_status": 1,
+        "automatic_managed_pagefile": true,
+        "automatic_reset_boot_option": true,
+        "automatic_reset_capability": true,
+        "boot_option_on_limit": null,
+        "boot_option_on_watch_dog": null,
+        "boot_rom_supported": true,
+        "boot_status": [
+          0,
+          0,
+          0,
+          221,
+          26,
+          29,
+          0,
+          3,
+          1,
+          0
+        ],
+        "bootup_state": "Normal boot",
+        "caption": "LT-17-244",
+        "chassis_bootup_state": 3,
+        "chassis_sku_number": null,
+        "current_time_zone": 60,
+        "daylight_in_effect": false,
+        "description": "AT/AT COMPATIBLE",
+        "dns_host_name": "LT-17-244",
+        "domain": "exact.cs",
+        "domain_role": 1,
+        "enable_daylight_savings_time": true,
+        "front_panel_reset_status": 0,
+        "hypervisor_present": true,
+        "infrared_supported": false,
+        "initial_load_info": null,
+        "install_date": null,
+        "keyboard_password_status": 0,
+        "last_load_info": null,
+        "manufacturer": "HP",
+        "model": "HP ZBook 15 G3",
+        "name": "LT-17-244",
+        "name_format": null,
+        "network_server_mode_enabled": true,
+        "number_of_logical_processors": 8,
+        "number_of_processors": 1,
+        "oem_string_array": [
+          "FBYTE#3X476J6S6b757M7Q7U7W7j7saBapaqauawbhcAdQdUdpdqfS.Nr;",
+          "BUILDID#15WWAVET601#SUUG#DUUG;",
+          "EDK2_1"
+        ],
+        "part_of_domain": true,
+        "pause_after_reset": "-1",
+        "pc_system_type": 2,
+        "pc_system_type_ex": 2,
+        "power_management_capabilities": null,
+        "power_management_supported": null,
+        "power_on_password_status": 0,
+        "power_state": 0,
+        "power_supply_state": 3,
+        "primary_owner_contact": null,
+        "primary_owner_name": "Exact",
+        "reset_capability": 1,
+        "reset_count": -1,
+        "reset_limit": -1,
+        "roles": [
+          "LM_Workstation",
+          "LM_Server",
+          "SQLServer",
+          "NT"
+        ],
+        "status": "OK",
+        "support_contact_description": null,
+        "system_family": "103C_5336AN",
+        "system_sku_number": "M9R62AV",
+        "system_startup_delay": null,
+        "system_startup_options": null,
+        "system_startup_setting": null,
+        "system_type": "x64-based PC",
+        "thermal_state": 3,
+        "total_physical_memory": "17054638080",
+        "user_name": "ecs\\ARIY372606",
+        "wake_up_type": 6,
+        "workgroup": null
+      },
+      "machine": "x86_64",
+      "system_type": "Mobile"
+    },
+    "memory": {
+      "swap": {
+        "total": "18006392kB",
+        "free": "16659188kB"
+      },
+      "total": "16654920kB",
+      "free": "4629804kB"
+    },
+    "network": {
+      "interfaces": {
+        "0xf": {
+          "configuration": {
+            "ip_address": [
+              "10.210.9.19",
+              "fe80::c82f:2e70:2686:d855",
+              "fe80::15b3:f650:642:e35f"
+            ],
+            "arp_always_source_route": null,
+            "arp_use_ether_snap": null,
+            "caption": "[00000001] Cisco AnyConnect Secure Mobility Client Virtual Miniport Adapter for Windows x64",
+            "database_path": "%SystemRoot%\\System32\\drivers\\etc",
+            "dead_gw_detect_enabled": null,
+            "default_ip_gateway": [
+              "::"
+            ],
+            "default_tos": null,
+            "default_ttl": null,
+            "description": "Cisco AnyConnect Secure Mobility Client Virtual Miniport Adapter for Windows x64",
+            "dhcp_enabled": false,
+            "dhcp_lease_expires": null,
+            "dhcp_lease_obtained": null,
+            "dhcp_server": null,
+            "dns_domain": "exactsoftware.com",
+            "dns_domain_suffix_search_order": [
+              "exactsoftware.com",
+              "exact.cs",
+              "home"
+            ],
+            "dns_enabled_for_wins_resolution": false,
+            "dns_host_name": "LT-17-244",
+            "dns_server_search_order": [
+              "10.2.32.22",
+              "10.2.32.23"
+            ],
+            "domain_dns_registration_enabled": false,
+            "forward_buffer_memory": null,
+            "full_dns_registration_enabled": true,
+            "gateway_cost_metric": [
+              1
+            ],
+            "igmp_level": null,
+            "index": 1,
+            "interface_index": 15,
+            "ip_connection_metric": 1,
+            "ip_enabled": true,
+            "ip_filter_security_enabled": false,
+            "ip_port_security_enabled": null,
+            "ip_sec_permit_ip_protocols": [
+
+            ],
+            "ip_sec_permit_tcp_ports": [
+
+            ],
+            "ip_sec_permit_udp_ports": [
+
+            ],
+            "ip_subnet": [
+              "255.255.0.0",
+              "126",
+              "64"
+            ],
+            "ip_use_zero_broadcast": null,
+            "ipx_address": null,
+            "ipx_enabled": null,
+            "ipx_frame_type": null,
+            "ipx_media_type": null,
+            "ipx_network_number": null,
+            "ipx_virtual_net_number": null,
+            "keep_alive_interval": null,
+            "keep_alive_time": null,
+            "mac_address": "00:05:9A:3C:7A:00",
+            "mtu": null,
+            "num_forward_packets": null,
+            "pmtubh_detect_enabled": null,
+            "pmtu_discovery_enabled": null,
+            "service_name": "vpnva",
+            "setting_id": "{5E4650F3-FBEC-4B20-84BD-13D59D1EB200}",
+            "tcpip_netbios_options": 0,
+            "tcp_max_connect_retransmissions": null,
+            "tcp_max_data_retransmissions": null,
+            "tcp_num_connections": null,
+            "tcp_use_rfc1122_urgent_pointer": null,
+            "tcp_window_size": null,
+            "wins_enable_lm_hosts_lookup": true,
+            "wins_host_lookup_file": null,
+            "wins_primary_server": null,
+            "wins_scope_id": "",
+            "wins_secondary_server": null
+          },
+          "instance": {
+            "adapter_type": "Ethernet 802.3",
+            "adapter_type_id": 0,
+            "auto_sense": null,
+            "availability": 3,
+            "caption": "[00000001] Cisco AnyConnect Secure Mobility Client Virtual Miniport Adapter for Windows x64",
+            "config_manager_error_code": 0,
+            "config_manager_user_config": false,
+            "description": "Cisco AnyConnect Secure Mobility Client Virtual Miniport Adapter for Windows x64",
+            "device_id": "1",
+            "error_cleared": null,
+            "error_description": null,
+            "guid": "{5E4650F3-FBEC-4B20-84BD-13D59D1EB200}",
+            "index": 1,
+            "install_date": null,
+            "installed": true,
+            "interface_index": 15,
+            "last_error_code": null,
+            "mac_address": "00:05:9A:3C:7A:00",
+            "manufacturer": "Cisco Systems",
+            "max_number_controlled": 0,
+            "max_speed": null,
+            "name": "Cisco AnyConnect Secure Mobility Client Virtual Miniport Adapter for Windows x64",
+            "net_connection_id": "Ethernet 2",
+            "net_connection_status": 2,
+            "net_enabled": true,
+            "network_addresses": null,
+            "permanent_address": null,
+            "physical_adapter": true,
+            "pnp_device_id": "ROOT\\NET\\0000",
+            "power_management_capabilities": null,
+            "power_management_supported": false,
+            "product_name": "Cisco AnyConnect Secure Mobility Client Virtual Miniport Adapter for Windows x64",
+            "service_name": "vpnva",
+            "speed": "71839000",
+            "status": null,
+            "status_info": null,
+            "system_name": "LT-17-244",
+            "time_of_last_reset": "20210219203536.500000+060"
+          },
+          "counters": {
+
+          },
+          "addresses": {
+            "10.210.9.19": {
+              "prefixlen": "16",
+              "netmask": "255.255.0.0",
+              "broadcast": "10.210.255.255",
+              "family": "inet"
+            },
+            "fe80::c82f:2e70:2686:d855": {
+              "prefixlen": "126",
+              "family": "inet6",
+              "scope": "Link"
+            },
+            "fe80::15b3:f650:642:e35f": {
+              "prefixlen": "64",
+              "family": "inet6",
+              "scope": "Link"
+            },
+            "00:05:9A:3C:7A:00": {
+              "family": "lladdr"
+            }
+          },
+          "mtu": null,
+          "type": "Ethernet 802.3",
+          "arp": {
+            "10.210.0.1": "00:11:22:33:44:55",
+            "10.210.255.255": "ff:ff:ff:ff:ff:ff",
+            "224.0.0.2": "01:00:5e:00:00:02",
+            "224.0.0.22": "01:00:5e:00:00:16",
+            "224.0.0.251": "01:00:5e:00:00:fb",
+            "224.0.0.252": "01:00:5e:00:00:fc",
+            "255.255.255.255": "ff:ff:ff:ff:ff:ff"
+          },
+          "encapsulation": "Ethernet"
+        },
+        "0x10": {
+          "configuration": {
+            "ip_address": [
+              "192.168.2.101",
+              "fe80::c3e:2ffb:6eb:535",
+              "2a02:a455:603b:1:e91f:9fa4:7551:e3c1",
+              "2a02:a455:603b:1:c3e:2ffb:6eb:535"
+            ],
+            "arp_always_source_route": null,
+            "arp_use_ether_snap": null,
+            "caption": "[00000004] Intel(R) Dual Band Wireless-AC 8260",
+            "database_path": "%SystemRoot%\\System32\\drivers\\etc",
+            "dead_gw_detect_enabled": null,
+            "default_ip_gateway": [
+              "192.168.2.254",
+              "fe80::66cc:22ff:fe1a:7187"
+            ],
+            "default_tos": null,
+            "default_ttl": null,
+            "description": "Intel(R) Dual Band Wireless-AC 8260",
+            "dhcp_enabled": true,
+            "dhcp_lease_expires": "20210220203559.000000+060",
+            "dhcp_lease_obtained": "20210219203559.000000+060",
+            "dhcp_server": "192.168.2.254",
+            "dns_domain": "home",
+            "dns_domain_suffix_search_order": [
+              "exactsoftware.com",
+              "exact.cs",
+              "home"
+            ],
+            "dns_enabled_for_wins_resolution": false,
+            "dns_host_name": "LT-17-244",
+            "dns_server_search_order": [
+              "192.168.2.254"
+            ],
+            "domain_dns_registration_enabled": false,
+            "forward_buffer_memory": null,
+            "full_dns_registration_enabled": true,
+            "gateway_cost_metric": [
+              0,
+              256
+            ],
+            "igmp_level": null,
+            "index": 4,
+            "interface_index": 16,
+            "ip_connection_metric": 50,
+            "ip_enabled": true,
+            "ip_filter_security_enabled": false,
+            "ip_port_security_enabled": null,
+            "ip_sec_permit_ip_protocols": [
+
+            ],
+            "ip_sec_permit_tcp_ports": [
+
+            ],
+            "ip_sec_permit_udp_ports": [
+
+            ],
+            "ip_subnet": [
+              "255.255.255.0",
+              "64",
+              "128",
+              "64"
+            ],
+            "ip_use_zero_broadcast": null,
+            "ipx_address": null,
+            "ipx_enabled": null,
+            "ipx_frame_type": null,
+            "ipx_media_type": null,
+            "ipx_network_number": null,
+            "ipx_virtual_net_number": null,
+            "keep_alive_interval": null,
+            "keep_alive_time": null,
+            "mac_address": "F0:D5:BF:14:30:20",
+            "mtu": null,
+            "num_forward_packets": null,
+            "pmtubh_detect_enabled": null,
+            "pmtu_discovery_enabled": null,
+            "service_name": "Netwtw06",
+            "setting_id": "{64C077A7-E29D-448E-80A1-AF4D4AF17E17}",
+            "tcpip_netbios_options": 0,
+            "tcp_max_connect_retransmissions": null,
+            "tcp_max_data_retransmissions": null,
+            "tcp_num_connections": null,
+            "tcp_use_rfc1122_urgent_pointer": null,
+            "tcp_window_size": null,
+            "wins_enable_lm_hosts_lookup": true,
+            "wins_host_lookup_file": null,
+            "wins_primary_server": null,
+            "wins_scope_id": "",
+            "wins_secondary_server": null
+          },
+          "instance": {
+            "adapter_type": "Ethernet 802.3",
+            "adapter_type_id": 0,
+            "auto_sense": null,
+            "availability": 3,
+            "caption": "[00000004] Intel(R) Dual Band Wireless-AC 8260",
+            "config_manager_error_code": 0,
+            "config_manager_user_config": false,
+            "description": "Intel(R) Dual Band Wireless-AC 8260",
+            "device_id": "4",
+            "error_cleared": null,
+            "error_description": null,
+            "guid": "{64C077A7-E29D-448E-80A1-AF4D4AF17E17}",
+            "index": 4,
+            "install_date": null,
+            "installed": true,
+            "interface_index": 16,
+            "last_error_code": null,
+            "mac_address": "F0:D5:BF:14:30:20",
+            "manufacturer": "Intel Corporation",
+            "max_number_controlled": 0,
+            "max_speed": null,
+            "name": "Intel(R) Dual Band Wireless-AC 8260",
+            "net_connection_id": "Wi-Fi",
+            "net_connection_status": 2,
+            "net_enabled": true,
+            "network_addresses": null,
+            "permanent_address": null,
+            "physical_adapter": true,
+            "pnp_device_id": "PCI\\VEN_8086&DEV_24F3&SUBSYS_10108086&REV_3A\\4&304ADE70&0&00E0",
+            "power_management_capabilities": null,
+            "power_management_supported": false,
+            "product_name": "Intel(R) Dual Band Wireless-AC 8260",
+            "service_name": "Netwtw06",
+            "speed": "130000000",
+            "status": null,
+            "status_info": null,
+            "system_name": "LT-17-244",
+            "time_of_last_reset": "20210219203536.500000+060"
+          },
+          "counters": {
+
+          },
+          "addresses": {
+            "192.168.2.101": {
+              "prefixlen": "24",
+              "netmask": "255.255.255.0",
+              "broadcast": "192.168.2.255",
+              "family": "inet"
+            },
+            "fe80::c3e:2ffb:6eb:535": {
+              "prefixlen": "64",
+              "family": "inet6",
+              "scope": "Link"
+            },
+            "2a02:a455:603b:1:e91f:9fa4:7551:e3c1": {
+              "prefixlen": "128",
+              "family": "inet6"
+            },
+            "2a02:a455:603b:1:c3e:2ffb:6eb:535": {
+              "prefixlen": "64",
+              "family": "inet6"
+            },
+            "F0:D5:BF:14:30:20": {
+              "family": "lladdr"
+            }
+          },
+          "mtu": null,
+          "type": "Ethernet 802.3",
+          "arp": {
+            "192.168.2.2": "7c:d9:5c:1d:9b:d7",
+            "192.168.2.254": "64:cc:22:1a:71:87",
+            "192.168.2.255": "ff:ff:ff:ff:ff:ff",
+            "224.0.0.2": "01:00:5e:00:00:02",
+            "224.0.0.22": "01:00:5e:00:00:16",
+            "224.0.0.251": "01:00:5e:00:00:fb",
+            "224.0.0.252": "01:00:5e:00:00:fc",
+            "224.0.255.135": "01:00:5e:00:ff:87",
+            "239.255.255.250": "01:00:5e:7f:ff:fa",
+            "255.255.255.255": "ff:ff:ff:ff:ff:ff"
+          },
+          "encapsulation": "Ethernet"
+        },
+        "0x30": {
+          "configuration": {
+            "ip_address": [
+              "172.17.225.81",
+              "fe80::311e:1c19:a4d:b38f"
+            ],
+            "arp_always_source_route": null,
+            "arp_use_ether_snap": null,
+            "caption": "[00000017] Hyper-V Virtual Ethernet Adapter",
+            "database_path": "%SystemRoot%\\System32\\drivers\\etc",
+            "dead_gw_detect_enabled": null,
+            "default_ip_gateway": null,
+            "default_tos": null,
+            "default_ttl": null,
+            "description": "Hyper-V Virtual Ethernet Adapter",
+            "dhcp_enabled": false,
+            "dhcp_lease_expires": null,
+            "dhcp_lease_obtained": null,
+            "dhcp_server": null,
+            "dns_domain": null,
+            "dns_domain_suffix_search_order": [
+              "exactsoftware.com",
+              "exact.cs",
+              "home"
+            ],
+            "dns_enabled_for_wins_resolution": false,
+            "dns_host_name": "LT-17-244",
+            "dns_server_search_order": null,
+            "domain_dns_registration_enabled": false,
+            "forward_buffer_memory": null,
+            "full_dns_registration_enabled": false,
+            "gateway_cost_metric": null,
+            "igmp_level": null,
+            "index": 17,
+            "interface_index": 48,
+            "ip_connection_metric": 5000,
+            "ip_enabled": true,
+            "ip_filter_security_enabled": false,
+            "ip_port_security_enabled": null,
+            "ip_sec_permit_ip_protocols": [
+
+            ],
+            "ip_sec_permit_tcp_ports": [
+
+            ],
+            "ip_sec_permit_udp_ports": [
+
+            ],
+            "ip_subnet": [
+              "255.255.255.240",
+              "64"
+            ],
+            "ip_use_zero_broadcast": null,
+            "ipx_address": null,
+            "ipx_enabled": null,
+            "ipx_frame_type": null,
+            "ipx_media_type": null,
+            "ipx_network_number": null,
+            "ipx_virtual_net_number": null,
+            "keep_alive_interval": null,
+            "keep_alive_time": null,
+            "mac_address": "00:15:5D:E5:61:90",
+            "mtu": null,
+            "num_forward_packets": null,
+            "pmtubh_detect_enabled": null,
+            "pmtu_discovery_enabled": null,
+            "service_name": "VMSNPXYMP",
+            "setting_id": "{4E046379-7322-4CD1-88BE-C19D1849A6BE}",
+            "tcpip_netbios_options": 0,
+            "tcp_max_connect_retransmissions": null,
+            "tcp_max_data_retransmissions": null,
+            "tcp_num_connections": null,
+            "tcp_use_rfc1122_urgent_pointer": null,
+            "tcp_window_size": null,
+            "wins_enable_lm_hosts_lookup": true,
+            "wins_host_lookup_file": null,
+            "wins_primary_server": null,
+            "wins_scope_id": "",
+            "wins_secondary_server": null
+          },
+          "instance": {
+            "adapter_type": "Ethernet 802.3",
+            "adapter_type_id": 0,
+            "auto_sense": null,
+            "availability": 3,
+            "caption": "[00000017] Hyper-V Virtual Ethernet Adapter",
+            "config_manager_error_code": 0,
+            "config_manager_user_config": false,
+            "description": "Hyper-V Virtual Ethernet Adapter",
+            "device_id": "17",
+            "error_cleared": null,
+            "error_description": null,
+            "guid": "{4E046379-7322-4CD1-88BE-C19D1849A6BE}",
+            "index": 17,
+            "install_date": null,
+            "installed": true,
+            "interface_index": 48,
+            "last_error_code": null,
+            "mac_address": "00:15:5D:E5:61:90",
+            "manufacturer": "Microsoft",
+            "max_number_controlled": 0,
+            "max_speed": null,
+            "name": "Hyper-V Virtual Ethernet Adapter",
+            "net_connection_id": "vEthernet (Default Switch)",
+            "net_connection_status": 2,
+            "net_enabled": true,
+            "network_addresses": null,
+            "permanent_address": null,
+            "physical_adapter": true,
+            "pnp_device_id": "ROOT\\VMS_MP\\0000",
+            "power_management_capabilities": null,
+            "power_management_supported": false,
+            "product_name": "Hyper-V Virtual Ethernet Adapter",
+            "service_name": "VMSNPXYMP",
+            "speed": "10000000000",
+            "status": null,
+            "status_info": null,
+            "system_name": "LT-17-244",
+            "time_of_last_reset": "20210219203536.500000+060"
+          },
+          "counters": {
+
+          },
+          "addresses": {
+            "172.17.225.81": {
+              "prefixlen": "28",
+              "netmask": "255.255.255.240",
+              "broadcast": "172.17.225.95",
+              "family": "inet"
+            },
+            "fe80::311e:1c19:a4d:b38f": {
+              "prefixlen": "64",
+              "family": "inet6",
+              "scope": "Link"
+            },
+            "00:15:5D:E5:61:90": {
+              "family": "lladdr"
+            }
+          },
+          "mtu": null,
+          "type": "Ethernet 802.3",
+          "arp": {
+            "172.17.225.95": "ff:ff:ff:ff:ff:ff",
+            "224.0.0.2": "01:00:5e:00:00:02",
+            "224.0.0.22": "01:00:5e:00:00:16",
+            "224.0.0.251": "01:00:5e:00:00:fb",
+            "239.255.255.250": "01:00:5e:7f:ff:fa",
+            "255.255.255.255": "ff:ff:ff:ff:ff:ff"
+          },
+          "encapsulation": "Ethernet"
+        },
+        "0x3a": {
+          "configuration": {
+            "ip_address": [
+              "172.18.29.161",
+              "fe80::843f:8799:9547:47c7"
+            ],
+            "arp_always_source_route": null,
+            "arp_use_ether_snap": null,
+            "caption": "[00000019] Hyper-V Virtual Ethernet Adapter",
+            "database_path": "%SystemRoot%\\System32\\drivers\\etc",
+            "dead_gw_detect_enabled": null,
+            "default_ip_gateway": null,
+            "default_tos": null,
+            "default_ttl": null,
+            "description": "Hyper-V Virtual Ethernet Adapter #2",
+            "dhcp_enabled": false,
+            "dhcp_lease_expires": null,
+            "dhcp_lease_obtained": null,
+            "dhcp_server": null,
+            "dns_domain": null,
+            "dns_domain_suffix_search_order": [
+              "exactsoftware.com",
+              "exact.cs",
+              "home"
+            ],
+            "dns_enabled_for_wins_resolution": false,
+            "dns_host_name": "LT-17-244",
+            "dns_server_search_order": null,
+            "domain_dns_registration_enabled": false,
+            "forward_buffer_memory": null,
+            "full_dns_registration_enabled": false,
+            "gateway_cost_metric": null,
+            "igmp_level": null,
+            "index": 19,
+            "interface_index": 58,
+            "ip_connection_metric": 5000,
+            "ip_enabled": true,
+            "ip_filter_security_enabled": false,
+            "ip_port_security_enabled": null,
+            "ip_sec_permit_ip_protocols": [
+
+            ],
+            "ip_sec_permit_tcp_ports": [
+
+            ],
+            "ip_sec_permit_udp_ports": [
+
+            ],
+            "ip_subnet": [
+              "255.255.255.240",
+              "64"
+            ],
+            "ip_use_zero_broadcast": null,
+            "ipx_address": null,
+            "ipx_enabled": null,
+            "ipx_frame_type": null,
+            "ipx_media_type": null,
+            "ipx_network_number": null,
+            "ipx_virtual_net_number": null,
+            "keep_alive_interval": null,
+            "keep_alive_time": null,
+            "mac_address": "00:15:5D:18:1F:E0",
+            "mtu": null,
+            "num_forward_packets": null,
+            "pmtubh_detect_enabled": null,
+            "pmtu_discovery_enabled": null,
+            "service_name": "VMSNPXYMP",
+            "setting_id": "{08CCF56F-B680-4E67-A6F1-72FD099AC24C}",
+            "tcpip_netbios_options": 0,
+            "tcp_max_connect_retransmissions": null,
+            "tcp_max_data_retransmissions": null,
+            "tcp_num_connections": null,
+            "tcp_use_rfc1122_urgent_pointer": null,
+            "tcp_window_size": null,
+            "wins_enable_lm_hosts_lookup": true,
+            "wins_host_lookup_file": null,
+            "wins_primary_server": null,
+            "wins_scope_id": "",
+            "wins_secondary_server": null
+          },
+          "instance": {
+            "adapter_type": "Ethernet 802.3",
+            "adapter_type_id": 0,
+            "auto_sense": null,
+            "availability": 3,
+            "caption": "[00000019] Hyper-V Virtual Ethernet Adapter",
+            "config_manager_error_code": 0,
+            "config_manager_user_config": false,
+            "description": "Hyper-V Virtual Ethernet Adapter",
+            "device_id": "19",
+            "error_cleared": null,
+            "error_description": null,
+            "guid": "{08CCF56F-B680-4E67-A6F1-72FD099AC24C}",
+            "index": 19,
+            "install_date": null,
+            "installed": true,
+            "interface_index": 58,
+            "last_error_code": null,
+            "mac_address": "00:15:5D:18:1F:E0",
+            "manufacturer": "Microsoft",
+            "max_number_controlled": 0,
+            "max_speed": null,
+            "name": "Hyper-V Virtual Ethernet Adapter #2",
+            "net_connection_id": "vEthernet (WSL)",
+            "net_connection_status": 2,
+            "net_enabled": true,
+            "network_addresses": null,
+            "permanent_address": null,
+            "physical_adapter": true,
+            "pnp_device_id": "ROOT\\VMS_MP\\0001",
+            "power_management_capabilities": null,
+            "power_management_supported": false,
+            "product_name": "Hyper-V Virtual Ethernet Adapter",
+            "service_name": "VMSNPXYMP",
+            "speed": "10000000000",
+            "status": null,
+            "status_info": null,
+            "system_name": "LT-17-244",
+            "time_of_last_reset": "20210219203536.500000+060"
+          },
+          "counters": {
+
+          },
+          "addresses": {
+            "172.18.29.161": {
+              "prefixlen": "28",
+              "netmask": "255.255.255.240",
+              "broadcast": "172.18.29.175",
+              "family": "inet"
+            },
+            "fe80::843f:8799:9547:47c7": {
+              "prefixlen": "64",
+              "family": "inet6",
+              "scope": "Link"
+            },
+            "00:15:5D:18:1F:E0": {
+              "family": "lladdr"
+            }
+          },
+          "mtu": null,
+          "type": "Ethernet 802.3",
+          "arp": {
+            "224.0.0.2": "01:00:5e:00:00:02",
+            "224.0.0.22": "01:00:5e:00:00:16",
+            "224.0.0.251": "01:00:5e:00:00:fb",
+            "239.255.255.250": "01:00:5e:7f:ff:fa"
+          },
+          "encapsulation": "Ethernet"
+        }
+      },
+      "default_gateway": "::",
+      "default_interface": "0xf"
+    },
+    "counters": {
+      "network": {
+
+      }
+    },
+    "ipaddress": "10.210.9.19",
+    "macaddress": "00:05:9A:3C:7A:00",
+    "ip6address": "fe80::c82f:2e70:2686:d855",
+    "os": "windows",
+    "os_version": "10.0.18363",
+    "platform": "windows",
+    "platform_version": "10.0.18363",
+    "platform_family": "windows",
+    "uptime_seconds": 10043,
+    "uptime": "2 hours 47 minutes 23 seconds",
+    "dmi": {
+      "chassis": {
+        "all_records": [
+          {
+            "AudibleAlarm": null,
+            "BreachDescription": null,
+            "CableManagementStrategy": null,
+            "Caption": "System Enclosure",
+            "ChassisTypes": [
+              10
+            ],
+            "CreationClassName": "Win32_SystemEnclosure",
+            "CurrentRequiredOrProduced": null,
+            "Depth": null,
+            "Description": "System Enclosure",
+            "HeatGeneration": null,
+            "Height": null,
+            "HotSwappable": null,
+            "InstallDate": null,
+            "LockPresent": false,
+            "Manufacturer": "HP",
+            "Model": null,
+            "Name": "System Enclosure",
+            "NumberOfPowerCords": null,
+            "OtherIdentifyingInfo": null,
+            "PartNumber": null,
+            "PoweredOn": null,
+            "Removable": null,
+            "Replaceable": null,
+            "SecurityBreach": null,
+            "SecurityStatus": 3,
+            "SerialNumber": "CND64647TN",
+            "ServiceDescriptions": null,
+            "ServicePhilosophy": null,
+            "SKU": null,
+            "SMBIOSAssetTag": " ",
+            "Status": null,
+            "Tag": "System Enclosure 0",
+            "TypeDescriptions": null,
+            "Version": " ",
+            "VisibleAlarm": null,
+            "Weight": null,
+            "Width": null
+          }
+        ],
+        "description": "System Enclosure",
+        "manufacturer": "HP",
+        "serial_number": "CND64647TN",
+        "smbios_asset_tag": "",
+        "tag": "System Enclosure 0",
+        "version": "",
+        "family": "System Enclosure"
+      },
+      "processor": {
+        "all_records": [
+          {
+            "AddressWidth": 64,
+            "Architecture": 9,
+            "AssetTag": "To Be Filled By O.E.M.",
+            "Availability": 3,
+            "Caption": "Intel64 Family 6 Model 94 Stepping 3",
+            "Characteristics": 252,
+            "ConfigManagerErrorCode": null,
+            "ConfigManagerUserConfig": null,
+            "CpuStatus": 1,
+            "CreationClassName": "Win32_Processor",
+            "CurrentClockSpeed": 2592,
+            "CurrentVoltage": 11,
+            "DataWidth": 64,
+            "Description": "Intel64 Family 6 Model 94 Stepping 3",
+            "DeviceID": "CPU0",
+            "ErrorCleared": null,
+            "ErrorDescription": null,
+            "ExtClock": 100,
+            "Family": 198,
+            "InstallDate": null,
+            "L2CacheSize": 1024,
+            "L2CacheSpeed": null,
+            "L3CacheSize": 6144,
+            "L3CacheSpeed": 0,
+            "LastErrorCode": null,
+            "Level": 6,
+            "LoadPercentage": 15,
+            "Manufacturer": "GenuineIntel",
+            "MaxClockSpeed": 2592,
+            "Name": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+            "NumberOfCores": 4,
+            "NumberOfEnabledCore": 4,
+            "NumberOfLogicalProcessors": 8,
+            "OtherFamilyDescription": null,
+            "PartNumber": "To Be Filled By O.E.M.",
+            "PNPDeviceID": null,
+            "PowerManagementCapabilities": null,
+            "PowerManagementSupported": false,
+            "ProcessorId": "BFEBFBFF000506E3",
+            "ProcessorType": 3,
+            "Revision": 24067,
+            "Role": "CPU",
+            "SecondLevelAddressTranslationExtensions": false,
+            "SerialNumber": "To Be Filled By O.E.M.",
+            "SocketDesignation": "U3E1",
+            "Status": "OK",
+            "StatusInfo": 3,
+            "Stepping": null,
+            "SystemCreationClassName": "Win32_ComputerSystem",
+            "SystemName": "LT-17-244",
+            "ThreadCount": 8,
+            "UniqueId": null,
+            "UpgradeMethod": 1,
+            "Version": "",
+            "VirtualizationFirmwareEnabled": false,
+            "VMMonitorModeExtensions": false,
+            "VoltageCaps": null
+          }
+        ],
+        "asset_tag": "To Be Filled By O.E.M.",
+        "description": "Intel64 Family 6 Model 94 Stepping 3",
+        "device_id": "CPU0",
+        "manufacturer": "GenuineIntel",
+        "part_number": "To Be Filled By O.E.M.",
+        "processor_id": "BFEBFBFF000506E3",
+        "role": "CPU",
+        "serial_number": "To Be Filled By O.E.M.",
+        "socket_designation": "U3E1",
+        "status": "OK",
+        "system_name": "LT-17-244",
+        "version": "",
+        "family": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz"
+      },
+      "bios": {
+        "all_records": [
+          {
+            "BiosCharacteristics": [
+              7,
+              8,
+              11,
+              12,
+              15,
+              16,
+              19,
+              26,
+              27,
+              28,
+              29,
+              32,
+              33,
+              39,
+              40,
+              41,
+              42,
+              43
+            ],
+            "BIOSVersion": [
+              "HPQOEM - 0",
+              "N81 Ver. 01.12",
+              "HP - 1000C"
+            ],
+            "BuildNumber": null,
+            "Caption": "N81 Ver. 01.12",
+            "CodeSet": null,
+            "CurrentLanguage": "enUS",
+            "Description": "N81 Ver. 01.12",
+            "EmbeddedControllerMajorVersion": 16,
+            "EmbeddedControllerMinorVersion": 102,
+            "IdentificationCode": null,
+            "InstallableLanguages": 14,
+            "InstallDate": null,
+            "LanguageEdition": null,
+            "ListOfLanguages": [
+              "enUS",
+              "daDK",
+              "nlNL",
+              "fiFI",
+              "frFR",
+              "deDE",
+              "itIT",
+              "jaJP",
+              "noNO",
+              "ptPT",
+              "esES",
+              "svSE",
+              "zhCN",
+              "zhTW"
+            ],
+            "Manufacturer": "HP",
+            "Name": "N81 Ver. 01.12",
+            "OtherTargetOS": null,
+            "PrimaryBIOS": true,
+            "ReleaseDate": "20161101000000.000000+000",
+            "SerialNumber": "CND64647TN",
+            "SMBIOSBIOSVersion": "N81 Ver. 01.12",
+            "SMBIOSMajorVersion": 2,
+            "SMBIOSMinorVersion": 7,
+            "SMBIOSPresent": true,
+            "SoftwareElementID": "N81 Ver. 01.12",
+            "SoftwareElementState": 3,
+            "Status": "OK",
+            "SystemBiosMajorVersion": 1,
+            "SystemBiosMinorVersion": 12,
+            "TargetOperatingSystem": 0,
+            "Version": "HPQOEM - 0"
+          }
+        ],
+        "current_language": "enUS",
+        "description": "N81 Ver. 01.12",
+        "manufacturer": "HP",
+        "release_date": "20161101000000.000000+000",
+        "serial_number": "CND64647TN",
+        "smbiosbios_version": "N81 Ver. 01.12",
+        "software_element_id": "N81 Ver. 01.12",
+        "status": "OK",
+        "version": "HPQOEM - 0",
+        "family": "N81 Ver. 01.12"
+      },
+      "system": {
+        "all_records": [
+          {
+            "Caption": "Computer System Product",
+            "Description": "Computer System Product",
+            "IdentifyingNumber": "CND64647TN",
+            "Name": "HP ZBook 15 G3",
+            "SKUNumber": null,
+            "UUID": "689257D8-ADD8-11E6-B71F-19595F06C09B",
+            "Vendor": "HP",
+            "Version": " "
+          }
+        ],
+        "description": "Computer System Product",
+        "uuid": "689257D8-ADD8-11E6-B71F-19595F06C09B",
+        "version": "",
+        "manufacturer": "HP",
+        "serial_number": "CND64647TN",
+        "family": "HP ZBook 15 G3"
+      },
+      "base_board": {
+        "all_records": [
+          {
+            "Caption": "Base Board",
+            "ConfigOptions": null,
+            "CreationClassName": "Win32_BaseBoard",
+            "Depth": null,
+            "Description": "Base Board",
+            "Height": null,
+            "HostingBoard": true,
+            "HotSwappable": false,
+            "InstallDate": null,
+            "Manufacturer": "HP",
+            "Model": null,
+            "Name": "Base Board",
+            "OtherIdentifyingInfo": null,
+            "PartNumber": null,
+            "PoweredOn": true,
+            "Product": "80D5",
+            "Removable": false,
+            "Replaceable": false,
+            "RequirementsDescription": null,
+            "RequiresDaughterBoard": false,
+            "SerialNumber": "PFTDKJ31W52ALW",
+            "SKU": null,
+            "SlotLayout": null,
+            "SpecialRequirements": null,
+            "Status": "OK",
+            "Tag": "Base Board",
+            "Version": "KBC Version 10.66",
+            "Weight": null,
+            "Width": null
+          }
+        ],
+        "description": "Base Board",
+        "manufacturer": "HP",
+        "product": "80D5",
+        "serial_number": "PFTDKJ31W52ALW",
+        "status": "OK",
+        "tag": "Base Board",
+        "version": "KBC Version 10.66",
+        "family": "Base Board"
+      }
+    },
+    "virtualization": {
+      "systems": {
+
+      }
+    },
+    "languages": {
+      "java": {
+        "version": "11.0.6",
+        "runtime": {
+          "name": "OpenJDK Runtime Environment AdoptOpenJDK",
+          "build": "11.0.6+10"
+        }
+      },
+      "nodejs": {
+        "version": "15.2.0"
+      },
+      "perl": {
+        "version": "5.8.8",
+        "archname": "msys-64int"
+      },
+      "powershell": {
+        "version": "5.1.18362.1171",
+        "ws_man_stack_version": "3.0",
+        "serialization_version": "1.1.0.1",
+        "clr_version": "4.0.30319.42000",
+        "build_version": "10.0.18362.1171",
+        "compatible_versions": [
+          "1.0",
+          "2.0",
+          "3.0",
+          "4.0",
+          "5.0",
+          "5.1.18362.1171"
+        ],
+        "remoting_protocol_version": "2.3"
+      },
+      "ruby": {
+        "platform": "x64-mingw32",
+        "version": "2.7.2",
+        "release_date": "2020-10-01",
+        "target": "x86_64-w64-mingw32",
+        "target_cpu": "x64",
+        "target_vendor": "w64",
+        "target_os": "mingw32",
+        "host": "x86_64-w64-mingw32",
+        "host_cpu": "x86_64",
+        "host_os": "mingw32",
+        "host_vendor": "w64",
+        "bin_dir": "C:/opscode/chef-workstation/embedded/bin",
+        "ruby_bin": "C:/opscode/chef-workstation/embedded/bin/ruby",
+        "gem_bin": "C:/opscode/chef-workstation/embedded/bin/gem",
+        "gems_dir": "C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.7.0"
+      }
+    },
+    "chef_packages": {
+      "chef": {
+        "version": "16.10.8",
+        "chef_root": "C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/chef-16.10.8-universal-mingw32/lib"
+      },
+      "ohai": {
+        "version": "16.10.6",
+        "ohai_root": "C:/opscode/chef-workstation/embedded/lib/ruby/gems/2.7.0/gems/ohai-16.10.6/lib/ohai"
+      }
+    },
+    "hostname": "LT-17-244",
+    "machinename": "LT-17-244",
+    "fqdn": "LT-17-244.exact.cs",
+    "domain": "exact.cs",
+    "cloud": null,
+    "command": {
+
+    },
+    "cpu": {
+      "0": {
+        "cores": 4,
+        "vendor_id": "GenuineIntel",
+        "family": "198",
+        "model": "24067",
+        "stepping": "3",
+        "physical_id": "CPU0",
+        "model_name": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+        "description": "Intel64 Family 6 Model 94 Stepping 3",
+        "mhz": "2592",
+        "cache_size": "1024 KB"
+      },
+      "total": 8,
+      "cores": 4,
+      "real": 1
+    },
+    "filesystem": {
+      "C:": {
+        "kb_size": 254573998,
+        "kb_available": 52954824,
+        "kb_used": 201619174,
+        "percent_used": 79,
+        "fs_type": "ntfs",
+        "drive_type": 3,
+        "drive_type_string": "local",
+        "drive_type_human": "Local Fixed Disk",
+        "volume_name": "Windows",
+        "encryption_status": "FullyEncrypted"
+      },
+      "D:": {
+        "kb_size": 500104687,
+        "kb_available": 407542755,
+        "kb_used": 92561932,
+        "percent_used": 18,
+        "fs_type": "ntfs",
+        "drive_type": 3,
+        "drive_type_string": "local",
+        "drive_type_human": "Local Fixed Disk",
+        "volume_name": "Data",
+        "encryption_status": "FullyEncrypted"
+      }
+    },
+    "filesystem2": {
+      "by_device": {
+        "windows": {
+          "kb_size": 254573998,
+          "kb_available": 52954824,
+          "kb_used": 201619174,
+          "percent_used": 79,
+          "fs_type": "ntfs",
+          "drive_type": 3,
+          "drive_type_string": "local",
+          "drive_type_human": "Local Fixed Disk",
+          "volume_name": "Windows",
+          "encryption_status": "FullyEncrypted",
+          "mounts": [
+            "C:"
+          ]
+        },
+        "data": {
+          "kb_size": 500104687,
+          "kb_available": 407542755,
+          "kb_used": 92561932,
+          "percent_used": 18,
+          "fs_type": "ntfs",
+          "drive_type": 3,
+          "drive_type_string": "local",
+          "drive_type_human": "Local Fixed Disk",
+          "volume_name": "Data",
+          "encryption_status": "FullyEncrypted",
+          "mounts": [
+            "D:"
+          ]
+        }
+      },
+      "by_mountpoint": {
+        "C:": {
+          "kb_size": 254573998,
+          "kb_available": 52954824,
+          "kb_used": 201619174,
+          "percent_used": 79,
+          "fs_type": "ntfs",
+          "drive_type": 3,
+          "drive_type_string": "local",
+          "drive_type_human": "Local Fixed Disk",
+          "volume_name": "Windows",
+          "encryption_status": "FullyEncrypted",
+          "devices": [
+            "windows"
+          ]
+        },
+        "D:": {
+          "kb_size": 500104687,
+          "kb_available": 407542755,
+          "kb_used": 92561932,
+          "percent_used": 18,
+          "fs_type": "ntfs",
+          "drive_type": 3,
+          "drive_type_string": "local",
+          "drive_type_human": "Local Fixed Disk",
+          "volume_name": "Data",
+          "encryption_status": "FullyEncrypted",
+          "devices": [
+            "data"
+          ]
+        }
+      },
+      "by_pair": {
+        "windows,C:": {
+          "kb_size": 254573998,
+          "kb_available": 52954824,
+          "kb_used": 201619174,
+          "percent_used": 79,
+          "mount": "C:",
+          "fs_type": "ntfs",
+          "drive_type": 3,
+          "drive_type_string": "local",
+          "drive_type_human": "Local Fixed Disk",
+          "volume_name": "Windows",
+          "device": "windows",
+          "encryption_status": "FullyEncrypted"
+        },
+        "data,D:": {
+          "kb_size": 500104687,
+          "kb_available": 407542755,
+          "kb_used": 92561932,
+          "percent_used": 18,
+          "mount": "D:",
+          "fs_type": "ntfs",
+          "drive_type": 3,
+          "drive_type_string": "local",
+          "drive_type_human": "Local Fixed Disk",
+          "volume_name": "Data",
+          "device": "data",
+          "encryption_status": "FullyEncrypted"
+        }
+      }
+    },
+    "fips": {
+      "kernel": {
+        "enabled": true
+      }
+    },
+    "keys": {
+      "ssh": {
+
+      }
+    },
+    "ohai_time": 1613773386.4978044,
+    "packages": {
+      "Windows Driver Package - Plantronics, Inc. (usbser.ntamd64) Ports  (04/21/2009 5.1)": {
+        "version": "04/21/2009 5.1",
+        "publisher": "Plantronics, Inc."
+      },
+      "Windows Driver Package - Cambridge Silicon Radio (CSRBC) USB  (10/26/2012 2.4.0.0)": {
+        "version": "10/26/2012 2.4.0.0",
+        "publisher": "Cambridge Silicon Radio"
+      },
+      "AppFabric 1.1 for Windows Server": {
+        "version": "1.1.2106.32",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "AutoHotkey 1.1.32.00": {
+        "version": "1.1.32.00",
+        "publisher": "Lexikos"
+      },
+      "Cisco Webex Productivity Tools": {
+        "version": "39.11.6.2",
+        "publisher": "Cisco WebEx LLC"
+      },
+      "Bang & Olufsen Audio": {
+        "version": "9.0.230.1",
+        "publisher": "Conexant"
+      },
+      "Docker Desktop": {
+        "version": "3.1.0",
+        "publisher": "Docker Inc."
+      },
+      "Git version 2.27.0": {
+        "version": "2.27.0",
+        "publisher": "The Git Development Community",
+        "installdate": "20200630"
+      },
+      "GDR 2002 for SQL Server 2017 (KB4293803) (64-bit)": {
+        "version": "14.0.2002.14",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190417"
+      },
+      "GDR 2014 for SQL Server 2017 (KB4494351) (64-bit)": {
+        "version": "14.0.2014.14",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190524"
+      },
+      "GDR 2027 for SQL Server 2017 (KB4505224) (64-bit)": {
+        "version": "14.0.2027.2",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190719"
+      },
+      "Hotfix 3294 for SQL Server 2017 (KB4541283) (64-bit)": {
+        "version": "14.0.3294.2",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200416"
+      },
+      "Microsoft Azure Compute Emulator - v2.9.6": {
+        "version": "2.9.8899.26",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "Microsoft SQL Server 2017 (64-bit)": {
+        "publisher": "Microsoft Corporation"
+      },
+      "Microsoft Visual Studio 2010 Tools for Office Runtime (x64)": {
+        "version": "10.0.60729",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190411"
+      },
+      "Mozilla Firefox 85.0.2 (x64 en-US)": {
+        "version": "85.0.2",
+        "publisher": "Mozilla"
+      },
+      "Mozilla Maintenance Service": {
+        "version": "62.0",
+        "publisher": "Mozilla"
+      },
+      "Notepad++ (64-bit x64)": {
+        "version": "7.6.3",
+        "publisher": "Notepad++ Team",
+        "installdate": "20190411"
+      },
+      "Microsoft 365 Apps for enterprise - en-us": {
+        "version": "16.0.13127.21064",
+        "publisher": "Microsoft Corporation"
+      },
+      "Pulse Secure Setup Client 64-bit Activex Control": {
+        "version": "2.1.1.1",
+        "publisher": "Pulse Secure, LLC"
+      },
+      "Synaptics Pointing Device Driver": {
+        "version": "19.0.19.68",
+        "publisher": "Synaptics Incorporated"
+      },
+      "IIS 10.0 Express": {
+        "version": "10.0.04403",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Microsoft .NET Core AppHost Pack - 3.1.12 (x64_arm)": {
+        "version": "24.112.29719",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft ODBC Driver 13 for SQL Server": {
+        "version": "14.0.3294.2",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200416"
+      },
+      "SQL Server 2017 Client Tools Extensions": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "IIS Express Application Compatibility Database for x64": {
+
+      },
+      "Node.js": {
+        "version": "15.2.0",
+        "publisher": "Node.js Foundation",
+        "installdate": "20201111"
+      },
+      "Microsoft .NET Core Host - 2.0.9 (x64)": {
+        "version": "16.36.26615",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200915"
+      },
+      "SQL Server 2017 Database Engine Shared": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft .NET Core 1.1.13 - Host (x64)": {
+        "version": "4.19.18193",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200911"
+      },
+      "Microsoft .NET Core SDK - 2.1.202 (x64)": {
+        "version": "2.1.202",
+        "publisher": "Microsoft Corporation"
+      },
+      "SQL Server 2017 Shared Management Objects": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200416"
+      },
+      "PuTTY release 0.74 (64-bit)": {
+        "version": "0.74.0.0",
+        "publisher": "Simon Tatham",
+        "installdate": "20210201"
+      },
+      "SQL Server 2017 XEvent": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200416"
+      },
+      "Software Management Solution Plugin": {
+        "version": "8.1.5889.0",
+        "publisher": "Altiris Inc.",
+        "installdate": "20190411"
+      },
+      "Microsoft ASP.NET Core 2.1.12 Shared Framework (x64)": {
+        "version": "2.1.12.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190820"
+      },
+      "Microsoft ASP.NET Core 3.0.1 Targeting Pack (x64)": {
+        "version": "3.0.1.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191120"
+      },
+      "Python 2.7.15 (64-bit)": {
+        "version": "2.7.15150",
+        "publisher": "Python Software Foundation",
+        "installdate": "20210124"
+      },
+      "Azure Functions Core Tools - 3.0.3233 (x64)": {
+        "version": "3.0.3233",
+        "publisher": "Microsoft",
+        "installdate": "20210202"
+      },
+      "Windows Subsystem for Linux Update": {
+        "version": "4.19.128",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201129"
+      },
+      "SQL Server Management Studio for Reporting Services": {
+        "version": "14.0.17289.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Python 3.9.1 Core Interpreter (64-bit)": {
+        "version": "3.9.1150.0",
+        "publisher": "Python Software Foundation",
+        "installdate": "20210104"
+      },
+      "IntelliTraceProfilerProxy": {
+        "version": "15.0.18198.01",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "Intel(R) Management Engine Components": {
+        "version": "1916.12.0.1263",
+        "publisher": "Intel Corporation"
+      },
+      "Microsoft Visual C++ 2010  x64 Redistributable - 10.0.40219": {
+        "version": "10.0.40219",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190411"
+      },
+      "SSMS Post Install Tasks": {
+        "version": "14.0.17289.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft Windows Desktop Runtime - 3.0.1 (x64)": {
+        "version": "24.4.28216",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191120"
+      },
+      "DiagnosticsHub_CollectionService": {
+        "version": "16.1.28901",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "Microsoft .NET Core AppHost Pack - 3.1.12 (x64)": {
+        "version": "24.112.29719",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft VSS Writer for SQL Server 2017": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200416"
+      },
+      "7-Zip 18.05 (x64 edition)": {
+        "version": "18.05.00.0",
+        "publisher": "Igor Pavlov",
+        "installdate": "20190411"
+      },
+      "Microsoft .NET Core 1.1.13 - Runtime (x64)": {
+        "version": "1.1.13.1809",
+        "publisher": "Microsoft Corporation"
+      },
+      "Python 3.9.1 Development Libraries (64-bit)": {
+        "version": "3.9.1150.0",
+        "publisher": "Python Software Foundation",
+        "installdate": "20210104"
+      },
+      "Synaptics WBF Fingerprint Reader": {
+        "version": "4.5.351.0",
+        "publisher": "Synaptics",
+        "installdate": "20200302"
+      },
+      "Git LFS version 2.11.0": {
+        "version": "2.11.0",
+        "publisher": "GitHub, Inc.",
+        "installdate": "20200630"
+      },
+      "SQL Server 2017 Database Engine Services": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200416"
+      },
+      "Microsoft .NET Core Runtime - 2.1.9 (x64)": {
+        "version": "16.100.27415",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "SQL Server 2017 Batch Parser": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200416"
+      },
+      "Microsoft Visual C++ 2019 X64 Additional Runtime - 14.28.29334": {
+        "version": "14.28.29334",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Microsoft Web Deploy 4.0": {
+        "version": "10.0.3802",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Microsoft Visual C++ 2012 x64 Minimum Runtime - 11.0.60610": {
+        "version": "11.0.60610",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft Windows Desktop Targeting Pack - 3.0.0 (x64)": {
+        "version": "24.0.28113",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191120"
+      },
+      "Microsoft .NET Core Targeting Pack - 3.1.0 (x64)": {
+        "version": "24.64.28315",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200318"
+      },
+      "Microsoft .NET AppHost Pack - 5.0.3 (x64)": {
+        "version": "40.12.29722",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Python 2.7.1 (64-bit)": {
+        "version": "2.7.1150",
+        "publisher": "Python Software Foundation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Targeting Pack - 5.0.0 (x64)": {
+        "version": "40.0.29419",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201111"
+      },
+      "Microsoft ASP.NET Core 2.1.13 Shared Framework (x64)": {
+        "version": "2.1.13.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190911"
+      },
+      "Microsoft Windows Desktop Runtime - 5.0.3 (x64)": {
+        "version": "40.12.29723",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft .NET Core 3.1 Templates 5.0.103 (x64)": {
+        "version": "12.19.10700",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft SQL Server Reporting Services": {
+        "version": "14.0.7393.5407",
+        "publisher": "Microsoft Corporation"
+      },
+      "Microsoft .NET Core Host FX Resolver - 2.2.4 (x64)": {
+        "version": "16.144.27522",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190514"
+      },
+      "Windows App Certification Kit Native Components": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Core Host - 2.2.4 (x64)": {
+        "version": "16.144.27522",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190514"
+      },
+      "Plantronics Hub Software": {
+        "version": "3.14.52621.49270",
+        "publisher": "Plantronics, Inc."
+      },
+      "Universal CRT Tools x64": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Azure PowerShell - April 2018": {
+        "version": "5.7.0.18831",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200915"
+      },
+      "Intel(R) Rapid Storage Technology": {
+        "version": "14.8.17.1065",
+        "publisher": "Intel Corporation",
+        "installdate": "20200117"
+      },
+      "Microsoft .NET Core 5.0 Templates 5.0.103 (x64)": {
+        "version": "20.3.59852",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Python 3.9.1 Tcl/Tk Support (64-bit)": {
+        "version": "3.9.1150.0",
+        "publisher": "Python Software Foundation",
+        "installdate": "20210104"
+      },
+      "Microsoft Command Line Utilities 15 for SQL Server": {
+        "version": "15.0.1300.359",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "Microsoft .NET Core Host FX Resolver - 2.1.13 (x64)": {
+        "version": "16.116.28008",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190911"
+      },
+      "Microsoft .NET Host FX Resolver - 5.0.3 (x64)": {
+        "version": "40.12.29722",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft .NET AppHost Pack - 5.0.3 (x64_arm64)": {
+        "version": "40.12.29722",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft .NET Host - 5.0.3 (x64)": {
+        "version": "40.12.29722",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Python 3.9.1 Utility Scripts (64-bit)": {
+        "version": "3.9.1150.0",
+        "publisher": "Python Software Foundation",
+        "installdate": "20210104"
+      },
+      "Intel(R) Management Engine Driver": {
+        "version": "1.0.0.0",
+        "publisher": "Intel Corporation",
+        "installdate": "20200117"
+      },
+      "Zulu JRE 8.46.0.19 (8u252), 64-bit": {
+        "version": "8.46.0.19",
+        "publisher": "Azul Systems, Inc.",
+        "installdate": "20201222"
+      },
+      "Microsoft ASP.NET Core 3.0.1 Shared Framework (x64)": {
+        "version": "3.0.1.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191120"
+      },
+      "Microsoft SQL Server 2017 RsFx Driver": {
+        "version": "14.0.3294.2",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200416"
+      },
+      "Microsoft Visual C++ 2013 x64 Additional Runtime - 12.0.40660": {
+        "version": "12.0.40660",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210204"
+      },
+      "Microsoft .NET SDK 5.0.103 (x64) from Visual Studio": {
+        "version": "5.1.321.7308",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft .NET Core Host FX Resolver - 2.0.9 (x64)": {
+        "version": "16.36.26615",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200915"
+      },
+      "Python 3.9.1 Documentation (64-bit)": {
+        "version": "3.9.1150.0",
+        "publisher": "Python Software Foundation",
+        "installdate": "20210104"
+      },
+      "Python 3.9.1 Standard Library (64-bit)": {
+        "version": "3.9.1150.0",
+        "publisher": "Python Software Foundation",
+        "installdate": "20210104"
+      },
+      "Microsoft .NET Core AppHost Pack - 3.1.12 (x64_x86)": {
+        "version": "24.112.29719",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.6161": {
+        "version": "9.0.30729.6161",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200305"
+      },
+      "Microsoft .NET Core SDK 2.1.801 (x64)": {
+        "version": "2.1.801",
+        "publisher": "Microsoft Corporation"
+      },
+      "Chef Workstation v21.2.278": {
+        "version": "21.2.278.1",
+        "publisher": "\"Chef Software, Inc. <maintainers@chef.io>\"",
+        "installdate": "20210219"
+      },
+      "Microsoft Policy Platform": {
+        "version": "68.1.1010.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210204"
+      },
+      "Azure Data Studio": {
+        "version": "1.23.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201128"
+      },
+      "Microsoft .NET AppHost Pack - 5.0.3 (x64_arm)": {
+        "version": "40.12.29722",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "SQL Server Management Studio": {
+        "version": "14.0.17289.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Azure DevOps Integration Tool for Office 2019 (x64)": {
+        "version": "16.168.30808",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210208"
+      },
+      "Microsoft .NET Core 3.0 Templates (x64)": {
+        "version": "3.0.1.014347",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191120"
+      },
+      "Microsoft .NET Core Host - 2.1.13 (x64)": {
+        "version": "16.116.28008",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190911"
+      },
+      "SQL Server Management Studio for Analysis Services": {
+        "version": "14.0.17289.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft .NET Core Host - 3.0.1 (x64)": {
+        "version": "24.4.28216",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191120"
+      },
+      "SQL Server 2017 Integration Services Scale Out Management Portal": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Active Directory Authentication Library for SQL Server": {
+        "version": "15.0.1300.359",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Microsoft Visual Studio Installer": {
+        "version": "2.9.3342.278",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Intel(R) Chipset Device Software": {
+        "version": "10.1.1.40",
+        "publisher": "Intel(R) Corporation"
+      },
+      "Microsoft ASP.NET Core 2.1.9 Shared Framework (x64)": {
+        "version": "2.1.9.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Python 3.9.1 Executables (64-bit)": {
+        "version": "3.9.1150.0",
+        "publisher": "Python Software Foundation",
+        "installdate": "20210104"
+      },
+      "Microsoft .NET Core SDK 2.2.106 (x64)": {
+        "version": "2.2.106",
+        "publisher": "Microsoft Corporation"
+      },
+      "Microsoft .NET Core AppHost Pack - 3.1.12 (x64_arm64)": {
+        "version": "24.112.29719",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft OLE DB Driver for SQL Server": {
+        "version": "18.3.0.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201128"
+      },
+      "Microsoft Windows Desktop Targeting Pack - 3.1.0 (x64)": {
+        "version": "24.64.28315",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200318"
+      },
+      "Microsoft Visual C++ 2012 x64 Additional Runtime - 11.0.60610": {
+        "version": "11.0.60610",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "ESET Management Agent": {
+        "version": "8.0.1238.0",
+        "publisher": "ESET, spol. s r.o.",
+        "installdate": "20210214"
+      },
+      "Microsoft SQL Server Compact 4.0 SP1 x64 ENU": {
+        "version": "4.0.8876.1",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft SQL Server 2017 Setup (English)": {
+        "version": "14.0.3294.2",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200416"
+      },
+      "icecap_collection_x64": {
+        "version": "15.8.27906",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft ASP.NET Core 5.0.0 Targeting Pack (x64)": {
+        "version": "5.0.0.20526",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201111"
+      },
+      "Microsoft .NET Core AppHost Pack - 3.0.1 (x64)": {
+        "version": "24.4.28216",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191120"
+      },
+      "Microsoft Visual C++ 2008 Redistributable - x64 9.0.30729.17": {
+        "version": "9.0.30729",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190411"
+      },
+      "Microsoft ASP.NET Core 2.0.9 Runtime Package Store (x64)": {
+        "version": "2.0.13103.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200915"
+      },
+      "SQL Server 2017 Connection Info": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200416"
+      },
+      "Microsoft Silverlight": {
+        "version": "5.1.50918.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201204"
+      },
+      "Microsoft Visual C++ 2019 X64 Minimum Runtime - 14.28.29334": {
+        "version": "14.28.29334",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Microsoft .NET Core 2.1 Templates 5.0.103 (x64)": {
+        "version": "8.23.27084",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "SQL Server 2017 Shared Management Objects Extensions": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft System CLR Types for SQL Server 2019 CTP2.2": {
+        "version": "15.0.1200.24",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "Intel(R) PRO/Wireless Driver": {
+        "version": "20.90.0000.9678",
+        "publisher": "Intel Corporation",
+        "installdate": "20200302"
+      },
+      "Office 16 Click-to-Run Licensing Component": {
+        "version": "16.0.13127.21064",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210126"
+      },
+      "Office 16 Click-to-Run Extensibility Component 64-bit Registration": {
+        "version": "16.0.13127.21064",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210126"
+      },
+      "Microsoft .NET Core Host FX Resolver - 3.1.8 (x64)": {
+        "version": "24.96.29220",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200911"
+      },
+      "Microsoft SQL Server 2016 LocalDB ": {
+        "version": "13.1.4001.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Windows SDK DirectX x64 Remote": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Core Runtime - 3.1.8 (x64)": {
+        "version": "24.96.29220",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200911"
+      },
+      "Microsoft .NET Toolset 5.0.103 (x64)": {
+        "version": "20.3.59852",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft Message Analyzer": {
+        "version": "4.0.8112.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190816"
+      },
+      "Altiris Inventory Agent": {
+        "version": "8.1.5832.0",
+        "publisher": "Symantec Corporation",
+        "installdate": "20190411"
+      },
+      "Azure DevOps Integration Tool for Office 2019 Language Pack (x64) - ENU": {
+        "version": "16.168.30808",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210208"
+      },
+      "Secret Server Protocol Handler": {
+        "version": "6.0.0.33",
+        "publisher": "Thycotic Software Ltd",
+        "installdate": "20210210"
+      },
+      "Microsoft .NET Core SDK 2.1.802 (x64)": {
+        "version": "2.1.802",
+        "publisher": "Microsoft Corporation"
+      },
+      "Configuration Manager Client": {
+        "version": "5.00.9012.1000",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210204"
+      },
+      "Microsoft .NET Core Targeting Pack - 3.0.0 (x64)": {
+        "version": "24.0.28113",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191120"
+      },
+      "Microsoft .NET Core Host - 2.1.9 (x64)": {
+        "version": "16.100.27415",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "DisplayLink Graphics Driver": {
+        "version": "9.2.2115.0",
+        "publisher": "DisplayLink Corp.",
+        "installdate": "20190724"
+      },
+      "SQL Server 2017 Common Files": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft SQL Server 2012 Native Client ": {
+        "version": "11.4.7462.6",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201128"
+      },
+      "Microsoft .NET Core Host FX Resolver - 2.1.9 (x64)": {
+        "version": "16.100.27415",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "VS Script Debugging Common": {
+        "version": "16.0.102.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Microsoft .NET Core SDK 3.0.101 (x64)": {
+        "version": "3.0.101.14347",
+        "publisher": "Microsoft Corporation"
+      },
+      "Microsoft .NET Standard Targeting Pack - 2.1.0 (x64)": {
+        "version": "24.0.28113",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191120"
+      },
+      "Microsoft .NET Core Runtime - 2.0.9 (x64)": {
+        "version": "16.36.26615",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200915"
+      },
+      "Python 3.9.1 Test Suite (64-bit)": {
+        "version": "3.9.1150.0",
+        "publisher": "Python Software Foundation",
+        "installdate": "20210104"
+      },
+      "ESET Endpoint Security": {
+        "version": "8.0.2028.0",
+        "publisher": "ESET, spol. s r.o.",
+        "installdate": "20210214"
+      },
+      "Microsoft Visual Studio Tools for Applications 2015 x64 Hosting Support": {
+        "version": "14.0.23829",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft System CLR Types for SQL Server 2017": {
+        "version": "14.0.3015.40",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft .NET Runtime - 5.0.3 (x64)": {
+        "version": "40.12.29722",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "IIS Express Application Compatibility Database for x86": {
+
+      },
+      "Microsoft Visual Studio Tools for Applications 2017 x64 Hosting Support": {
+        "version": "15.0.27520",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201128"
+      },
+      "Microsoft SQL Server 2017 T-SQL Language Service ": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Application Verifier x64 External Package": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft",
+        "installdate": "20210124"
+      },
+      "Microsoft Windows Desktop Targeting Pack - 5.0.0 (x64)": {
+        "version": "40.0.29420",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201111"
+      },
+      "SQL Server 2017 DMF": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft .NET Core Runtime - 3.0.1 (x64)": {
+        "version": "24.4.28216",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191120"
+      },
+      "SQL Server 2017 Full text search": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200416"
+      },
+      "PDFsam Basic": {
+        "version": "4.0.4.0",
+        "publisher": "Sober Lemur S.a.s. di Vacondio Andrea",
+        "installdate": "20191001"
+      },
+      "Microsoft Analysis Services OLE DB Provider": {
+        "version": "15.0.2000.20",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201128"
+      },
+      "Microsoft .NET Core Host - 2.1.12 (x64)": {
+        "version": "16.112.27818",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190820"
+      },
+      "Microsoft Azure Libraries for .NET – v2.9": {
+        "version": "3.0.0127.060",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "VS JIT Debugger": {
+        "version": "16.0.102.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Altiris Application Metering Agent": {
+        "version": "8.1.5636.0",
+        "publisher": "Symantec Corporation",
+        "installdate": "20190411"
+      },
+      "Microsoft ASP.NET Core 2.1.25 Shared Framework (x64)": {
+        "version": "2.1.25.41022",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft .NET Core SDK 2.1.505 (x64)": {
+        "version": "2.1.505",
+        "publisher": "Microsoft Corporation"
+      },
+      "Microsoft Visual C++ 2013 x64 Minimum Runtime - 12.0.40660": {
+        "version": "12.0.40660",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210204"
+      },
+      "Redis on Windows": {
+        "version": "3.2.100",
+        "publisher": "MSOpenTech",
+        "installdate": "20210121"
+      },
+      "Microsoft .NET Core Host - 3.1.8 (x64)": {
+        "version": "24.96.29220",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200911"
+      },
+      "Microsoft .NET AppHost Pack - 5.0.3 (x64_x86)": {
+        "version": "40.12.29722",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft ASP.NET Core 3.1.12 Shared Framework (x64)": {
+        "version": "3.1.12.21070",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft .NET Core Runtime - 2.1.13 (x64)": {
+        "version": "16.116.28008",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190911"
+      },
+      "Pulse Secure": {
+        "version": "9.0.1731",
+        "publisher": "Pulse Secure, LLC",
+        "installdate": "20190510"
+      },
+      "AdoptOpenJDK JDK with Hotspot 11.0.6.10 (x64)": {
+        "version": "11.0.6.10",
+        "publisher": "AdoptOpenJDK",
+        "installdate": "20200127"
+      },
+      "SQL Server 2017 SQL Diagnostics": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft ODBC Driver 17 for SQL Server": {
+        "version": "17.5.1.1",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201128"
+      },
+      "Microsoft .NET Core Host FX Resolver - 3.0.1 (x64)": {
+        "version": "24.4.28216",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191120"
+      },
+      "Microsoft .NET Core 1.1.13 - Host FX Resolver (x64)": {
+        "version": "4.18.18193",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200911"
+      },
+      "Microsoft .NET Core Runtime - 2.2.4 (x64)": {
+        "version": "16.144.27522",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190514"
+      },
+      "Microsoft .NET Core Runtime - 2.1.25 (x64)": {
+        "version": "16.100.29720",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Intel(R) ME UninstallLegacy": {
+        "version": "1.0.1.0",
+        "publisher": "Intel Corporation",
+        "installdate": "20190513"
+      },
+      "Microsoft Visual Studio Code": {
+        "version": "1.53.2",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210214"
+      },
+      "Microsoft Azure Authoring Tools - v2.9.6": {
+        "version": "2.9.8899.26",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "Python 3.9.1 pip Bootstrap (64-bit)": {
+        "version": "3.9.1150.0",
+        "publisher": "Python Software Foundation",
+        "installdate": "20210104"
+      },
+      "Intel® PROSet/Wireless WiFi Software": {
+        "version": "20.90.0.2270",
+        "publisher": "Intel Corporation",
+        "installdate": "20200302"
+      },
+      "Microsoft Windows Desktop Runtime - 3.1.8 (x64)": {
+        "version": "3.1.8.29220",
+        "publisher": "Microsoft Corporation"
+      },
+      "Local Administrator Password Solution": {
+        "version": "6.0.1.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190411"
+      },
+      "Microsoft ASP.NET Core 5.0.3 Shared Framework (x64)": {
+        "version": "5.0.3.21073",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft ASP.NET Core 2.2.4 Shared Framework (x64)": {
+        "version": "2.2.4.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190514"
+      },
+      "Microsoft ASP.NET Core Module for IIS Express": {
+        "version": "12.2.18292.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "Microsoft Visual C++ 2017 X64 Debug Runtime - 14.16.27033": {
+        "version": "14.16.27033",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Core Host FX Resolver - 2.1.12 (x64)": {
+        "version": "16.112.27818",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190820"
+      },
+      "Microsoft Windows Desktop Runtime - 3.1.12 (x64)": {
+        "version": "24.112.29719",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft ASP.NET Core Module V2 for IIS Express": {
+        "version": "13.1.20087.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200915"
+      },
+      "Microsoft .NET Core Runtime - 2.1.12 (x64)": {
+        "version": "16.112.27818",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190820"
+      },
+      "Microsoft .NET Core Runtime - 3.1.12 (x64)": {
+        "version": "24.112.29719",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft ASP.NET Core 3.1.10 Targeting Pack (x64)": {
+        "version": "3.1.10.20520",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201208"
+      },
+      "Visual Studio Build Tools 2017": {
+        "version": "15.9.28307.1342",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Visual Studio Professional 2019 (3)": {
+        "version": "16.8.31005.135",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201124"
+      },
+      "Cisco AnyConnect Secure Mobility Client ": {
+        "version": "4.9.00086",
+        "publisher": "Cisco Systems, Inc."
+      },
+      "Microsoft Azure Storage Emulator - v5.10": {
+        "version": "5.10.19227.2113",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191121"
+      },
+      "Microsoft Help Viewer 2.3": {
+        "version": "2.3.28107",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201128"
+      },
+      "Microsoft SQL Server 2017": {
+        "publisher": "Microsoft Corporation"
+      },
+      "Multipass": {
+        "version": "1.6.1+win",
+        "publisher": "canonical"
+      },
+      "Pulse Secure 9.0": {
+        "version": "9.0.1731",
+        "publisher": "Pulse Secure, LLC"
+      },
+      "Pulse Secure Setup Client Activex Control": {
+        "version": "2.1.1.1",
+        "publisher": "Pulse Secure, LLC"
+      },
+      "Skype version 8.69": {
+        "version": "8.69",
+        "publisher": "Skype Technologies S.A.",
+        "installdate": "20210216"
+      },
+      "WinRT Intellisense UAP - Other Languages": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "WinRT Intellisense Desktop - en-us": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "ClickOnce Bootstrapper Package for Microsoft .NET Framework": {
+        "version": "4.8.04119",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200318"
+      },
+      "Microsoft Visual Studio Tools for Applications 2015 Language Support - ENU Language Pack": {
+        "version": "14.0.23107.20",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201127"
+      },
+      "Universal CRT Redistributable": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.30501": {
+        "version": "12.0.30501.0",
+        "publisher": "Microsoft Corporation"
+      },
+      "TypeScript SDK": {
+        "version": "4.0.6.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "vs_minshellmsi": {
+        "version": "16.8.30530",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201111"
+      },
+      "Realtek USB Audio": {
+        "version": "6.3.9600.182",
+        "publisher": "Realtek Semiconductor Corp.",
+        "installdate": "20200302"
+      },
+      "SDK ARM Additions": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Visual C++ 2019 X86 Minimum Runtime - 14.28.29334": {
+        "version": "14.28.29334",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Cisco Jabber": {
+        "version": "12.9.3.54813",
+        "publisher": "Cisco Systems, Inc",
+        "installdate": "20201216"
+      },
+      "vcpp_crt.redist.clickonce": {
+        "version": "14.28.29325",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201111"
+      },
+      "Windows IoT Extension SDK": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Visual Studio Tools for Applications 2015 x86 Hosting Support": {
+        "version": "14.0.23829",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "icecap_collectionresourcesx64": {
+        "version": "16.8.30530",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201111"
+      },
+      "Microsoft Visual C++ 2019 X86 Additional Runtime - 14.28.29334": {
+        "version": "14.28.29334",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Cisco Webex Meetings Desktop App": {
+        "version": "41.1.5.10",
+        "publisher": "Cisco Webex LLC",
+        "installdate": "20190411"
+      },
+      "Microsoft .NET Framework 4.7.2 Targeting Pack": {
+        "version": "4.7.03062",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "Exact Synergy Office Integration": {
+        "version": "5.0.740.0",
+        "publisher": "Exact Software B. V.",
+        "installdate": "20201215"
+      },
+      "Microsoft Windows Desktop Runtime - 3.1.12 (x86)": {
+        "version": "24.112.29719",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Microsoft .NET Framework 4.5.2 Multi-Targeting Pack": {
+        "version": "4.5.51651",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Windows SDK for Windows Store Apps": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Integration Services": {
+        "version": "15.0.2000.128",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201128"
+      },
+      "Microsoft .NET Host FX Resolver - 5.0.3 (x86)": {
+        "version": "40.12.29722",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "HP BIOS Configuration Utility": {
+        "version": "4.0.21.1",
+        "publisher": "HP Inc.",
+        "installdate": "20190411"
+      },
+      "Windows SDK AddOn": {
+        "version": "10.1.0.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft SQL Server 2017 Policies ": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft .NET Core SDK 2.1.811 (x86)": {
+        "version": "8.218.59058",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201022"
+      },
+      "vs_clickoncebootstrappermsires": {
+        "version": "16.0.28329",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "vs_minshellinteropmsi": {
+        "version": "16.2.28917",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Samsung Magician": {
+        "version": "5.3.1.2010",
+        "publisher": "Samsung Electronics",
+        "installdate": "20190730"
+      },
+      "Kits Configuration Installer": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft",
+        "installdate": "20210124"
+      },
+      "EOL Product Updater": {
+        "version": "2.0.7.0",
+        "publisher": "Exact",
+        "installdate": "20200514"
+      },
+      "Microsoft .NET Framework 4.6 Targeting Pack": {
+        "version": "4.6.00081",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Windows SDK EULA": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporations",
+        "installdate": "20210124"
+      },
+      "Update for Microsoft Visual Studio 2015 (KB3095681)": {
+        "version": "14.0.23317",
+        "publisher": "Microsoft Corporation"
+      },
+      "HP Wireless Button Driver": {
+        "version": "1.1.21.1",
+        "publisher": "HP",
+        "installdate": "20190513"
+      },
+      "Microsoft .NET Framework 4.6.1 SDK": {
+        "version": "4.6.01055",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "vs_clickoncesigntoolmsi": {
+        "version": "16.0.28329",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "Windows SDK Desktop Libs arm": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows SDK for Windows Store Apps Contracts": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "vs_FileTracker_Singleton": {
+        "version": "16.8.30509",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201111"
+      },
+      "Microsoft Visual C++ 2012 x86 Additional Runtime - 11.0.60610": {
+        "version": "11.0.60610",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Exact Online VS2019 CheckIn Policies": {
+        "version": "1.0.0",
+        "publisher": "Exact",
+        "installdate": "20200416"
+      },
+      "EOL TFS Powertools": {
+        "version": "2.1.2.0",
+        "publisher": "Exact",
+        "installdate": "20190807"
+      },
+      "Microsoft ASP.Net Web Frameworks 5.0 Security Update (KB2992080)": {
+        "version": "5.0.20821",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200305"
+      },
+      "EOL Testrunner": {
+        "version": "2.1.1.0",
+        "publisher": "Exact",
+        "installdate": "20191211"
+      },
+      "Google Chrome": {
+        "version": "88.0.4324.182",
+        "publisher": "Google, Inc.",
+        "installdate": "20190411"
+      },
+      "Windows SDK Desktop Headers arm64": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Visual Studio 2015 Shell (Isolated) Resources": {
+        "version": "14.0.23107",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201127"
+      },
+      "Cisco AnyConnect Umbrella Roaming Security Module": {
+        "version": "4.9.00086",
+        "publisher": "Cisco Systems, Inc.",
+        "installdate": "20201120"
+      },
+      "OldMHUUninstaller": {
+        "version": "3.2.0.0",
+        "publisher": "Plantronics, Inc."
+      },
+      "Microsoft .NET Framework 4.6.1 Developer Pack": {
+        "version": "4.6.1055",
+        "publisher": "Microsoft Corporation"
+      },
+      "icecap_collectionresources": {
+        "version": "16.8.30607",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201111"
+      },
+      "Windows SDK Desktop Headers x64": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft ASP.NET Web Tools Packages 16.0 - ENU": {
+        "version": "1.0.21125.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200318"
+      },
+      "SDK ARM Redistributables": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows App Certification Kit SupportedApiList x86": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Framework 4.8 Developer Pack": {
+        "version": "4.8.3928",
+        "publisher": "Microsoft Corporation"
+      },
+      "Windows SDK Desktop Libs arm64": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Visual C++ 2017 X86 Debug Runtime - 14.16.27033": {
+        "version": "14.16.27033",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Framework 4.7.1 Targeting Pack": {
+        "version": "4.7.02558",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210208"
+      },
+      "Microsoft .NET Framework 4.5 Multi-Targeting Pack": {
+        "version": "4.5.50710",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Windows SDK Signing Tools": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Framework 4.6.2 SDK": {
+        "version": "4.6.01590",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Windows Software Development Kit - Windows 10.0.17763.132": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation"
+      },
+      "Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.40660": {
+        "version": "12.0.40660.0",
+        "publisher": "Microsoft Corporation"
+      },
+      "Dell SecureWorks Ignition": {
+        "version": "2.8.1.0",
+        "publisher": "Dell SecureWorks",
+        "installdate": "20201229"
+      },
+      "SQL Server 2017 Management Studio Extensions": {
+        "version": "14.0.3026.27",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft .NET Framework 4.5.1 Multi-Targeting Pack": {
+        "version": "4.5.50932",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "MSI Development Tools": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Visual Studio 2015 Shell (Isolated)": {
+        "version": "14.0.23107.10",
+        "publisher": "Microsoft Corporation"
+      },
+      "Windows Mobile Extension SDK Contracts": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Windows Desktop Runtime - 5.0.3 (x86)": {
+        "version": "40.12.29723",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Windows SDK Redistributables": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "WinAppDeploy": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft NetStandard SDK": {
+        "version": "15.0.51105",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200915"
+      },
+      "Windows App Certification Kit x64": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "WinRT Intellisense PPI - Other Languages": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows SDK for Windows Store Apps Headers": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "vs_clickoncebootstrappermsi": {
+        "version": "16.8.30530",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201111"
+      },
+      "Entity Framework 6.2.0 Tools  for Visual Studio 2019": {
+        "version": "6.2.0.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200318"
+      },
+      "icecap_collection_neutral": {
+        "version": "15.8.27906",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft .NET Core Host FX Resolver - 2.1.23 (x86)": {
+        "version": "16.92.29322",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201022"
+      },
+      "Universal CRT Extension SDK": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Visual C++ 2013 x86 Additional Runtime - 12.0.40660": {
+        "version": "12.0.40660",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210204"
+      },
+      "WinRT Intellisense IoT - en-us": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft SQL Server Data-Tier Application Framework (x86)": {
+        "version": "14.0.4127.1",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Windows SDK Desktop Tools x64": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "WinRT Intellisense PPI - en-us": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Framework 4.7 Targeting Pack (ENU)": {
+        "version": "4.7.02046",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210208"
+      },
+      "Microsoft Visual Studio Tools for Applications 2015 Language Support": {
+        "version": "14.0.23107.20",
+        "publisher": "Microsoft Corporation"
+      },
+      "vs_filehandler_x86": {
+        "version": "16.8.30530",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201111"
+      },
+      "Microsoft ASP.NET Core 5.0.3 Shared Framework (x86)": {
+        "version": "5.0.3.21073",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "HP Universal Camera Driver": {
+        "version": "3.7.8.2A",
+        "publisher": "SunplusIT",
+        "installdate": "20200302"
+      },
+      "Microsoft .NET Framework 4.6.1 Targeting Pack": {
+        "version": "4.6.01055",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Webex Recorder and Player": {
+        "version": "33.6.2.16",
+        "publisher": "Cisco Webex LLC",
+        "installdate": "20190411"
+      },
+      "Microsoft Azure Storage Explorer version 1.11.1": {
+        "version": "1.11.1",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191127"
+      },
+      "Microsoft .NET Framework 4.6.1 Targeting Pack (ENU)": {
+        "version": "4.6.01055",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft .NET Framework 4.7.1 Doc Redirected Targeting Pack (ENU)": {
+        "version": "4.7.02558",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210208"
+      },
+      "Office 16 Click-to-Run Extensibility Component": {
+        "version": "16.0.13127.21064",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210126"
+      },
+      "Office 16 Click-to-Run Localization Component": {
+        "version": "16.0.13127.21064",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210126"
+      },
+      "EOL Developer Helper": {
+        "version": "3.3.0.0",
+        "publisher": "Exact",
+        "installdate": "20200727"
+      },
+      "Exact Online VS2015 CheckIn Policies": {
+        "version": "1.0.1",
+        "publisher": "Exact",
+        "installdate": "20190416"
+      },
+      "Microsoft SQL Server Management Studio - 17.9.1": {
+        "version": "14.0.17289.0",
+        "publisher": "Microsoft Corporation"
+      },
+      "Windows SDK for Windows Store Apps DirectX x86 Remote": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows Desktop Extension SDK Contracts": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Framework 4.8 SDK": {
+        "version": "4.8.03928",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191121"
+      },
+      "HP ESU for Microsoft Windows 10": {
+        "version": "11.2.2",
+        "publisher": "HP",
+        "installdate": "20200117"
+      },
+      "Microsoft Visual C++ 2012 Redistributable (x86) - 11.0.60610": {
+        "version": "11.0.60610.1",
+        "publisher": "Microsoft Corporation"
+      },
+      "Microsoft Visual Studio Tools for Applications 2017 x86 Hosting Support": {
+        "version": "15.0.27520",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201128"
+      },
+      "vs_communitymsires": {
+        "version": "16.0.28329",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Microsoft Visual Studio Team Foundation Server 2015 Power Tools": {
+        "version": "14.1.10821.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Windows SDK for Windows Store Managed Apps Libs": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17": {
+        "version": "9.0.30729",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190411"
+      },
+      "Microsoft CCR and DSS Runtime 2008 R3": {
+        "version": "2.2.760",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.6161": {
+        "version": "9.0.30729.6161",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200305"
+      },
+      "Windows SDK Desktop Tools arm64": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows SDK for Windows Store Apps Metadata": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Framework 4.6.2 Targeting Pack": {
+        "version": "4.6.01590",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft Visual C++ 2012 Redistributable (x64) - 11.0.60610": {
+        "version": "11.0.60610.1",
+        "publisher": "Microsoft Corporation"
+      },
+      "Microsoft TestPlatform SDK Local Feed": {
+        "version": "16.6.0.4",
+        "publisher": "Microsoft",
+        "installdate": "20200915"
+      },
+      "Microsoft .NET Framework 4.8 Targeting Pack (ENU)": {
+        "version": "4.8.03761",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210208"
+      },
+      "VS Immersive Activate Helper": {
+        "version": "16.0.102.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Microsoft SQL Server Management Studio - 18.7.1": {
+        "version": "15.0.18358.0",
+        "publisher": "Microsoft Corporation"
+      },
+      "ClickOnce Bootstrapper Package for Microsoft .NET Framework 4.8 on Visual Studio 2017": {
+        "version": "4.8.03928",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210208"
+      },
+      "Windows Team Extension SDK": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Visual C++ 2015-2019 Redistributable (x64) - 14.28.29334": {
+        "version": "14.28.29334.0",
+        "publisher": "Microsoft Corporation"
+      },
+      "Visual Studio 2017 Isolated Shell for SSMS": {
+        "version": "15.0.28307.421",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201128"
+      },
+      "Microsoft Visual Studio Tools for Applications 2015": {
+        "version": "14.0.23829",
+        "publisher": "Microsoft Corporation"
+      },
+      "Network Recording Player": {
+        "version": "33.6.2.16",
+        "publisher": "Cisco Webex LLC",
+        "installdate": "20190411"
+      },
+      "Adobe Refresh Manager": {
+        "version": "1.8.0",
+        "publisher": "Adobe Systems Incorporated",
+        "installdate": "20210210"
+      },
+      "Adobe Acrobat Reader DC": {
+        "version": "20.012.20048",
+        "publisher": "Adobe Systems Incorporated",
+        "installdate": "20201009"
+      },
+      "Windows IoT Extension SDK Contracts": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Dell SecureWorks Red Cloak": {
+        "version": "2.8.1.0",
+        "publisher": "Dell SecureWorks",
+        "installdate": "20201229"
+      },
+      "vs_devenvmsi": {
+        "version": "16.0.28329",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "Windows SDK Desktop Libs x64": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "WinRT Intellisense UAP - en-us": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Core Host - 2.1.23 (x86)": {
+        "version": "16.92.29322",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201022"
+      },
+      "Exact TestAutomation VIsual Studio Extensions 2015": {
+        "version": "1.0.3",
+        "publisher": "Exact Online Development",
+        "installdate": "20190416"
+      },
+      "Microsoft Visual C++ 2015-2019 Redistributable (x86) - 14.28.29334": {
+        "version": "14.28.29334.0",
+        "publisher": "Microsoft Corporation"
+      },
+      "Windows Mobile Extension SDK": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft ASP.NET Web Tools Packages 15.0 - ENU": {
+        "version": "1.0.30615.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft .NET Framework 4.7.2 Targeting Pack (ENU)": {
+        "version": "4.7.03062",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "vs_BlendMsi": {
+        "version": "16.0.28329",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "ScreenToGif": {
+        "version": "2.27.3",
+        "publisher": "Nicke Manarin",
+        "installdate": "20210115"
+      },
+      "Entity Framework 6.2.0 Tools  for Visual Studio 2017": {
+        "version": "6.2.61807.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Windows SDK for Windows Store Apps Tools": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows Phone SDK 8.0 Assemblies for Visual Studio 2019": {
+        "version": "16.0.30509",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201127"
+      },
+      "Microsoft .NET Framework 4.8 Targeting Pack": {
+        "version": "4.8.03761",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210208"
+      },
+      "vs_vswebprotocolselectormsi": {
+        "version": "16.8.30509",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201111"
+      },
+      "Microsoft Visual Studio Tools for Applications 2015 Language Support Finalizer": {
+        "version": "14.0.23107.20",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Windows SDK Desktop Headers arm": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Search in Bing": {
+        "version": "2.0.2",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210126"
+      },
+      "Windows SDK Modern Versioned Developer Tools": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Framework Cumulative Intellisense Pack for Visual Studio (ENU)": {
+        "version": "4.8.03761",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20191121"
+      },
+      "Microsoft .NET Framework 4.6.2 Targeting Pack (ENU)": {
+        "version": "4.6.01590",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Windows SDK Desktop Headers x86": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows SDK Facade Windows WinMD Versioned": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Vagrant": {
+        "version": "2.2.14",
+        "publisher": "HashiCorp",
+        "installdate": "20210206"
+      },
+      "Universal CRT Headers Libraries and Sources": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Visual Studio Setup Configuration": {
+        "version": "2.7.3111.17308",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200915"
+      },
+      "Microsoft .NET Core Runtime - 2.1.23 (x86)": {
+        "version": "16.92.29322",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201022"
+      },
+      "Microsoft .NET Framework 4.7 Targeting Pack": {
+        "version": "4.7.02046",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210208"
+      },
+      "Universal General MIDI DLS Extension SDK": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Browser for SQL Server 2017": {
+        "version": "14.0.1000.169",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200416"
+      },
+      "Microsoft .NET Framework 4 Multi-Targeting Pack": {
+        "version": "4.0.30319",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Update for  (KB2504637)": {
+        "version": "1",
+        "publisher": "Microsoft Corporation"
+      },
+      "DefaultPackMSI": {
+        "version": "4.6.2.0",
+        "publisher": "Microsoft",
+        "installdate": "20210126"
+      },
+      "Universal CRT Tools x86": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows SDK Desktop Libs x86": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows SDK for Windows Store Apps Libs": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Runtime - 5.0.3 (x86)": {
+        "version": "40.12.29722",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "vs_minshellmsires": {
+        "version": "16.8.30530",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "vs_communitymsi": {
+        "version": "16.8.30608",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Microsoft ASP.NET Diagnostic Pack for Visual Studio": {
+        "version": "16.8.559.8768",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "vs_SQLClickOnceBootstrappermsi": {
+        "version": "16.8.30615",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201111"
+      },
+      "vs_tipsmsi": {
+        "version": "16.0.28329",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190822"
+      },
+      "Microsoft Visual C++ 2013 x86 Minimum Runtime - 12.0.40660": {
+        "version": "12.0.40660",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210204"
+      },
+      "Asmedia USB Host Controller Driver": {
+        "version": "1.16.47.1",
+        "publisher": "Asmedia Technology",
+        "installdate": "20200302"
+      },
+      "Microsoft Visual Studio Setup WMI Provider": {
+        "version": "2.7.3111.17308",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20200915"
+      },
+      "GoTo Opener": {
+        "version": "1.0.539",
+        "publisher": "LogMeIn, Inc.",
+        "installdate": "20201231"
+      },
+      "Microsoft Visual C++ 2012 x86 Minimum Runtime - 11.0.60610": {
+        "version": "11.0.60610",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "WinRT Intellisense Desktop - Other Languages": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "WinRT Intellisense IoT - Other Languages": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "vs_filehandler_amd64": {
+        "version": "16.8.30530",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201203"
+      },
+      "Windows SDK ARM Desktop Tools": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows Desktop Extension SDK": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows SDK": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft .NET Framework 4.6.2 Developer Pack": {
+        "version": "4.6.1590",
+        "publisher": "Microsoft Corporation"
+      },
+      "OldMHUUninstallerMSI": {
+        "version": "3.2.0.0",
+        "publisher": "Plantronics, Inc.",
+        "installdate": "20191106"
+      },
+      "Cisco AnyConnect Secure Mobility Client": {
+        "version": "4.9.00086",
+        "publisher": "Cisco Systems, Inc.",
+        "installdate": "20201120"
+      },
+      "Microsoft Visual C++ 2013 Redistributable (x64) - 12.0.40660": {
+        "version": "12.0.40660.0",
+        "publisher": "Microsoft Corporation"
+      },
+      "Microsoft Visual C++ 2010  x86 Redistributable - 10.0.40219": {
+        "version": "10.0.40219",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190411"
+      },
+      "Intel(R) Processor Graphics": {
+        "version": "26.20.100.7263",
+        "publisher": "Intel Corporation"
+      },
+      "Windows Team Extension SDK Contracts": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Visual C++ 2013 Redistributable (x86) - 12.0.30501": {
+        "version": "12.0.30501.0",
+        "publisher": "Microsoft Corporation"
+      },
+      "WinRT Intellisense Mobile - en-us": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows SDK Desktop Tools x86": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Windows SDK DirectX x86 Remote": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Visual Studio Tools for Applications 2017": {
+        "version": "15.0.27520",
+        "publisher": "Microsoft Corporation"
+      },
+      "Intel® PROSet/Wireless Software": {
+        "version": "20.90.0",
+        "publisher": "Intel Corporation"
+      },
+      "Microsoft Visual Studio Tools for Applications 2015 Finalizer": {
+        "version": "14.0.23829",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20190416"
+      },
+      "Microsoft .NET Core Runtime - 3.1.12 (x86)": {
+        "version": "24.112.29719",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Windows SDK Modern Non-Versioned Developer Tools": {
+        "version": "10.1.17763.132",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210124"
+      },
+      "Microsoft Azure CLI": {
+        "version": "2.18.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210206"
+      },
+      "Microsoft ASP.NET Core 3.1.12 Shared Framework (x86)": {
+        "version": "3.1.12.21070",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210210"
+      },
+      "Git Credential Manager Core 2.0.318.44100": {
+        "version": "2.0.318.44100",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20210212"
+      },
+      "Microsoft ASP.NET Core 2.1.23 Shared Framework (x86)": {
+        "version": "2.1.23.0",
+        "publisher": "Microsoft Corporation",
+        "installdate": "20201022"
+      },
+      "Python Launcher": {
+        "version": "3.9.7280.0",
+        "publisher": "Python Software Foundation",
+        "installdate": "20210104"
+      }
+    },
+    "root_group": "Administrators",
+    "shard_seed": 223700389,
+    "time": {
+      "timezone": "W. Europe Standard Time"
+    },
+    "system_enclosure": {
+      "manufacturer": "HP",
+      "serialnumber": "CND64647TN"
+    },
+    "chef_guid": "86aa7fa6-47c4-4c70-833f-fa3404e7d5c3",
+    "name": "LT-17-244.exact.cs",
+    "chef_environment": "_default",
+    "recipes": [
+
+    ],
+    "expanded_run_list": [
+
+    ],
+    "roles": [
+
+    ]
+  }
+}

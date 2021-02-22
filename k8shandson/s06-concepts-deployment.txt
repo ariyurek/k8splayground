@@ -10,5 +10,7 @@ kubectl apply -f deployment-definition.yml --> after the change
 
 kubectl rollout undo deployment/frontend
 
+kubectl create deployment nginx --image=nginx
 kubectl edit deployment frontend --record=true
 kubectl delete deployment frontend
+kubectl get pods -o wide

@@ -9,3 +9,6 @@ terraform apply "newplan"
 terraform destroy
 terraform apply -var 'admin_username=plankton' -var 'admin_password=Password1234!'
 terraform output public_ip_address
+terraform workspace new test --> creat new environment
+terraform workspace select dev--> switch to dev environment
+terraform destroy -var-file="/dev/dev.tfvars"  --> delete dev environment
