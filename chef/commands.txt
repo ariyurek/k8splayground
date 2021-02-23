@@ -259,3 +259,68 @@ kitchen verify
 nano test/recipes/default_test.rb
 kitchen verify
 kitchen destroy
+
+
+
+# 9-7 Bonus: ChefSpec
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# these commands are run from the LOCAL machine. 
+# Please note that your machine may not be configured
+# for ChefSpec development like in the demoed video.
+# https://docs.chef.io/chefspec.html
+# https://github.com/sethvargo/chefspec
+
+cd ~/cookbooks/apache
+pwd
+tree
+chef generate recipe test
+tree
+chef exec rspec
+nano spec/unit/recipes/default_spec.rb
+nano spec/spec_helper.rb
+chef exec rspec spec/unit/recipes/default_spec.rb
+
+# 10-4 Uploading Cookbooks
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after configuring the ~/chef-repo directory
+# and downloading the /cookbooks to your local machine
+
+cd ~/chef-repo
+ls
+ls cookbooks/
+ls -a
+ls .chef/
+cat .chef/knife.rb
+knife --help
+knife client list
+knife ssl check
+knife cookbook --help
+knife cookbook list
+knife cookbook upload workstation
+knife cookbook upload apache
+knife cookbook list
+
+# 10-6 Lab: Bootstrap a Webserver
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+vagrant status
+vagrant ssh-config
+knife bootstrap localhost --ssh-port PORT --ssh-user vagrant --sudo --identity-file /PATH/TO/KEY -N web1
+knife node list
+knife node show web1
+knife node run_list add web1 "recipe[workstation],recipe[apache]"
+knife node show web1
+vagrant ssh web1
+
+# run these commands on the web1 vagrant instance
+
+vagrant@web1$ sudo chef-client
+vagrant@web1$ curl localhost
