@@ -324,3 +324,145 @@ vagrant ssh web1
 
 vagrant@web1$ sudo chef-client
 vagrant@web1$ curl localhost
+
+
+# 11-5 Berkshelf
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+berks --help
+cd cookbooks/myhaproxy/
+tree
+cat Berksfile
+cat metadata.rb
+clear
+pwd
+clear
+ls
+berks install
+cd ..
+ls
+ls ~/.berkshelf/cookbooks/
+cd myhaproxy/
+berks upload
+cookstyle .
+berks upload
+knife cookbook list
+berks upload
+vim metadata.rb
+berks upload
+berks --force
+ls
+cat Berksfile.lock
+
+
+# 12-3 Bootstrap Web2 and Update Load Balancer
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+vagrant ssh-config
+knife bootstrap localhost --ssh-port WEB2_PORT --ssh-user vagrant --identity-file /PATH/TO/WEB2_KEY --sudo -N web2 --run-list "recipe[workstation],recipe[apache]"
+vagrant ssh web2
+cd cookbooks/myhaproxy
+berks install
+berks upload
+knife cookbook list
+knife cookbook show myhaproxy
+vagrant ssh load-balancer
+
+
+# run these commands on the web2 vagrant instance
+
+vagrant@web2$ curl localhost
+vagrant@web2$ sudo chef-client
+vagrant@web2$ curl localhost
+vagrant@web2$ exit
+
+# run these commands on the load-balancer vagrant instance
+
+vagrant@load-balancer$ curl localhost
+vagrant@load-balancer$ curl localhost
+vagrant@load-balancer$ exit
+
+/*
+#
+# Cookbook:: myhaproxy
+# Recipe:: default
+#
+# Copyright:: 2018, The Authors, All Rights Reserved.
+
+haproxy_install 'package'
+
+haproxy_frontend 'http-in' do
+  bind '*:80'
+  default_backend 'servers'
+end
+
+haproxy_backend 'servers' do
+  server [
+  	'web1 192.168.10.43:80 maxconn 32',
+  	'web2 192.168.10.44:80 maxconn 32'
+  ]
+end
+
+haproxy_service 'haproxy' do
+	subscribes :reload, 'template[/etc/haproxy/haproxy.cfg]', :immediately
+end
+*/
+
+
+# 12-5 Bonus: Run the chef-client on a Schedule
+# this command list is provided to accompany the demos in the Chef Fundamentals Udemy course
+# commands that involve editing files assume nano as the text editor
+
+# run these commands on your local machine after copying new Vagrantfile to ~/chef-repo and running 'vagrant up'
+
+cd ~/chef-repo
+chef generate cookbook cookbooks/mychef-client
+ls cookbooks/
+cd cookbooks/mychef-client
+nano metadata.rb
+nano recipes/default.rb
+berks install
+berks upload
+cd ~/chef-repo
+knife node show load-balancer
+knife node run_list set load-balancer "recipe[mychef-client],recipe[myhaproxy]"
+knife node show load-balancer
+vagrant ssh load-balancer
+
+# run these commands on the load-balancer vagrant instance
+
+vagrant@load-balancer$ sudo chef-client
+vagrant@load-balancer$ ps awux | grep chef-client
+vagrant@load-balancer$ exit
+/*
+# ~/chef-repo/cookbooks/mychef-client/recipes/default.rb
+#
+# Cookbook Name:: mychef-client
+# Recipe:: default
+#
+# Copyright (c) 2016 The Authors, All Rights Reserved.
+
+node.default['chef_client']['interval'] = '300'
+node.default['chef_client']['splay'] = '60'
+
+include_recipe 'chef-client::default'
+
+# ~/chef-repo/cookbooks/mychef-client/recipes/metadata.rb
+
+name 'mychef-client'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures mychef-client'
+long_description 'Installs/Configures mychef-client'
+version '0.1.0'
+
+depends 'chef-client', '= 7.0.2'
+*/
