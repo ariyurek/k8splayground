@@ -1,3 +1,4 @@
+https://github.com/zealvora/terraform-beginner-to-advanced-resource
 terraform init
 terraform plan
 terraform apply
@@ -12,3 +13,5 @@ terraform output public_ip_address
 terraform workspace new test --> creat new environment
 terraform workspace select dev--> switch to dev environment
 terraform destroy -var-file="/dev/dev.tfvars"  --> delete dev environment
+terraform refresh--> update status of state file
+terraform init -upgrade
