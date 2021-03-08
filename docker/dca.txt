@@ -29,7 +29,7 @@ curl  http://dexter.kplabs.in/test
  
 curl -f http://dexter.kplabs.in/test214.txt
 
-
+how to copy file from host to container --> docker cp foo.txt mycontainer:/foo.txt
 --ZEAL VORA
 FROM busybox
 RUN mkdir -p /root/demo

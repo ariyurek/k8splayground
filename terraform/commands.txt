@@ -9,9 +9,17 @@ terraform plan -out=newplan
 terraform apply "newplan"
 terraform destroy
 terraform apply -var 'admin_username=plankton' -var 'admin_password=Password1234!'
+terraform apply -auto-approve
 terraform output public_ip_address
 terraform workspace new test --> creat new environment
 terraform workspace select dev--> switch to dev environment
 terraform destroy -var-file="/dev/dev.tfvars"  --> delete dev environment
 terraform refresh--> update status of state file
 terraform init -upgrade
+terraform console
+terraform fmt
+terraform validate
+terraform graph > graph.dot
+
+export TF_LOG=TRACE
+export TF_LOG_PATH=/tmp/terraform.log
